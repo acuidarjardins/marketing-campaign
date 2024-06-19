@@ -1,0 +1,24 @@
+.footer {
+  height: 4rem;
+  width: 100vw;
+  color: white;
+  background-color: #063e24;
+  display: flex;
+  gap: 6px;
+  flex-direction: row;
+  font-weight: 300;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 1024px) {
+  .footer_complement {
+    display: block;
+  }
+}
+
+@media (max-width: 1023px) {
+  .footer_complement {
+    display: none;
+  }
+}

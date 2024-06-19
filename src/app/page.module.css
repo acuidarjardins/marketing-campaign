@@ -1,0 +1,59 @@
+.main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: calc(100vh - 10rem);
+  width: 100vw;
+}
+
+.banner_mobile {
+  max-height: 85%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.banner_desktop {
+  max-height: 85%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+@media (min-width: 1024px) {
+  .banner_mobile {
+    display: none;
+  }
+  .banner_desktop {
+    display: block;
+  }
+}
+
+@media (max-width: 1023px) {
+  .banner_desktop {
+    display: none;
+  }
+  .banner_mobile {
+    display: block;
+  }
+}
+
+@media (min-width: 515px) {
+  .main {
+    justify-content: center;
+    padding-bottom: 2rem;
+  }
+
+  .whatsapp_button {
+    display: none;
+  }
+}
+
+@media (max-width: 514px) {
+  .main {
+    justify-content: flex-start;
+    gap: 0.5rem;
+  }
+
+  .whatsapp_button {
+    display: flex;
+  }
+}

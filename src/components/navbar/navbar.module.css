@@ -1,0 +1,29 @@
+.navbar {
+  width: 100vw;
+  padding: 1rem 2rem;
+  height: 6rem;
+  gap: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+}
+
+.whatsapp_cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+@media (min-width: 515px) {
+  .whatsapp_button {
+    display: flex;
+  }
+}
+
+@media (max-width: 514px) {
+  .whatsapp_button {
+    display: none;
+  }
+}
