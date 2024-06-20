@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  height: calc(100vh - 10rem);
+  height: calc(100dvh - 10rem);
   width: 100vw;
 }
 
