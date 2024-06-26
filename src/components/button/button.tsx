@@ -1,7 +1,10 @@
+"use client";
+
 import { CSSProperties } from "react";
 
 import styles from "./button.module.css";
 import { whatsAppLink } from "@/modules/constants";
+import { sendGTMEvent } from "@next/third-parties/google";
 
 export type ButtonProps = {
   title: string;
@@ -16,7 +19,12 @@ const Button = ({ title, width, fontSize }: ButtonProps) => {
   } as React.CSSProperties;
 
   return (
-    <a className={styles.button} style={buttonStyle} href={whatsAppLink}>
+    <a
+      className={styles.button}
+      style={buttonStyle}
+      href={whatsAppLink}
+      onClick={() => sendGTMEvent({ event: "clickWhatsapp", value: "click" })}
+    >
       {title}
     </a>
   );
