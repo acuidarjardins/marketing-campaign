@@ -1,0 +1,22 @@
+.main {
+  padding: 2rem 0;
+  gap: 1rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+}
+
+@media (min-width: 515px) {
+  .main {
+    justify-content: center;
+    padding-bottom: 2rem;
+  }
+}
+
+@media (max-width: 514px) {
+  .main {
+    justify-content: flex-start;
+    gap: 0.5rem;
+  }
+}
