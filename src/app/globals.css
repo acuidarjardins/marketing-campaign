@@ -8,7 +8,6 @@ html,
 body {
   max-width: 100vw;
   min-height: 100dvh;
-  max-height: 100dvh;
   overflow-x: hidden;
-  background-color: #e5eaed;
+  background-color: #e7ecec;
 }

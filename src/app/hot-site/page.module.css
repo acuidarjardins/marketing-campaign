@@ -1,0 +1,32 @@
+.main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: calc(100dvh - 10rem);
+  width: 100vw;
+}
+
+@media (min-width: 515px) {
+  .main {
+    justify-content: center;
+  }
+
+  .whatsapp_button {
+    display: none;
+  }
+}
+
+@media (max-width: 514px) {
+  .main {
+    justify-content: flex-start;
+    gap: 0.5rem;
+  }
+
+  .whatsapp_button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+}

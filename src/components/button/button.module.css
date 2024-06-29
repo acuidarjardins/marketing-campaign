@@ -4,7 +4,8 @@
   align-items: center;
   justify-content: center;
   width: var(--button-width, 180px);
-  background: #f18721;
+  height: var(--button-height, auto);
+  background: var(--button-background, #f18721);
   color: #ffffff;
   font-size: var(--button-font-size, 16px);
   padding: 14px 22px;
@@ -15,6 +16,6 @@
 }
 
 .button:hover {
-  background: #c56d1b;
+  background: var(--button-background-hover, #c56d1b);
   cursor: pointer;
 }

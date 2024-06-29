@@ -24,7 +24,9 @@ const Navbar = () => (
         />
       </a>
       <div className={styles.whatsapp_button}>
-        <Button title="Solicite um cuidador" width="220px" fontSize="14px" />
+        <Button width="220px" fontSize="14px">
+          Solicite um cuidador
+        </Button>
       </div>
     </div>
   </nav>
