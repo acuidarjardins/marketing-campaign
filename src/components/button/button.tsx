@@ -1,10 +1,10 @@
 "use client";
 
 import { CSSProperties, PropsWithChildren } from "react";
-
-import styles from "./button.module.css";
 import { whatsAppLink } from "@/modules/constants";
 import { sendGTMEvent } from "@next/third-parties/google";
+
+import styles from "./button.module.css";
 
 export type ButtonProps = {
   width?: string;

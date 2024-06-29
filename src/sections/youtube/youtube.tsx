@@ -1,7 +1,8 @@
+import { BsArrowRight } from "react-icons/bs";
 import { YouTubeEmbed } from "@next/third-parties/google";
+
 import styles from "./youtube.module.css";
 import Button from "../../components/button/button";
-import { BsArrowRight } from "react-icons/bs";
 
 const YoutubeSection = () => {
   return (
@@ -16,7 +17,7 @@ const YoutubeSection = () => {
             <p>Qualidade de vida para todos.</p>
           </section>
         </div>
-        <Button width="240px" background="#132E33" backgroundHover="#395358">
+        <Button width="15rem" background="#132E33" backgroundHover="#395358">
           <div className={styles.button_content}>
             Solicitar serviço
             <BsArrowRight size="1.25rem" color="#96b570" />

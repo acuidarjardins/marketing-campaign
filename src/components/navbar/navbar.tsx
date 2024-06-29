@@ -1,8 +1,8 @@
 import Image from "next/image";
+import { whatsAppLink } from "@/modules/constants";
 
 import Button from "../button/button";
 import styles from "./navbar.module.css";
-import { whatsAppLink } from "@/modules/constants";
 
 const Navbar = () => (
   <nav className={styles.navbar}>

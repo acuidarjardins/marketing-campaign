@@ -2,19 +2,19 @@
   height: fit-content;
   max-height: var(--section-maxHeight, calc(100dvh - 10rem));
   object-fit: contain;
-  margin: 2rem;
+  margin: 0 2rem;
 }
 
 .banner_mobile {
   height: fit-content;
-  max-height: var(--section-maxHeight, calc(100dvh - 12rem));
+  max-height: var(--section-maxHeight, calc(100dvh - 10rem));
   max-width: 100%;
   object-fit: contain;
 }
 
 .banner_desktop {
   height: fit-content;
-  max-height: var(--section-maxHeight, calc(100dvh - 12rem));
+  max-height: var(--section-maxHeight, calc(100dvh - 10rem));
   max-width: 100%;
   object-fit: contain;
 }
