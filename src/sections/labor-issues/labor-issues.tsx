@@ -14,13 +14,13 @@ const LaborIssuesSection = () => (
     />
     <div className={styles.text_container}>
       <h3 className={styles.header}>
-        {"Conte com os serviços da Acuidar e "}
+        <span>Conte com os serviços da Acuidar e </span>
         <span className={styles.header_span}>
-          {"não se preocupe com questões trabalhistas"}
+          não se preocupe com questões trabalhistas
         </span>
       </h3>
       <p className={styles.content}>
-        <span>{"Nossa empresa se encarrega do contato "}</span>
+        <span>Nossa empresa se encarrega do contato </span>
         <span>com o cuidador e de sua contratação.</span>
       </p>
       <Button width="15rem" background="#e7ecec" backgroundHover="#395358">
