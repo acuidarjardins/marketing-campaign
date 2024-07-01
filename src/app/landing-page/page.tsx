@@ -1,11 +1,18 @@
+import {
+  BannerSection,
+  YoutubeSection,
+  BenefitsSection,
+  LaborIssuesSection,
+} from "@/sections";
+
 import styles from "./page.module.css";
-import { BannerSection, BenefitsSection, YoutubeSection } from "@/sections";
 
 const Home = () => (
   <main className={styles.main}>
     <BannerSection maxHeight="640px" />
     <YoutubeSection />
     <BenefitsSection />
+    <LaborIssuesSection />
   </main>
 );
 
