@@ -18,7 +18,7 @@ const MapSection = () => (
         style="width: 100%; height: 100%;"
         height={350}
         language="pt-BR"
-        loading="lazy"
+        loading="eager"
         mode="place"
         allowfullscreen={false}
         maptype=""
