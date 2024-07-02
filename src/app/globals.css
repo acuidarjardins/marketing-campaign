@@ -14,3 +14,7 @@ body {
   overflow-x: hidden;
   background-color: #e7ecec;
 }
+.swiper-button-prev,
+.swiper-button-next {
+  color: #78a046 !important;
+}

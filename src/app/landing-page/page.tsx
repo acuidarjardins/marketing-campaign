@@ -3,6 +3,7 @@ import {
   YoutubeSection,
   BenefitsSection,
   LaborIssuesSection,
+  GoogleReviewsSection,
 } from "@/sections";
 
 import styles from "./page.module.css";
@@ -13,6 +14,7 @@ const Home = () => (
     <YoutubeSection />
     <BenefitsSection />
     <LaborIssuesSection />
+    <GoogleReviewsSection />
   </main>
 );
 
