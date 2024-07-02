@@ -1,8 +1,8 @@
 import Image from "next/image";
+import { whatsAppLink } from "@/modules/constants";
 
 import Button from "../button/button";
 import styles from "./navbar.module.css";
-import { whatsAppLink } from "@/modules/constants";
 
 const Navbar = () => (
   <nav className={styles.navbar}>
@@ -24,7 +24,9 @@ const Navbar = () => (
         />
       </a>
       <div className={styles.whatsapp_button}>
-        <Button title="Solicite um cuidador" width="220px" fontSize="14px" />
+        <Button width="220px" fontSize="14px">
+          Solicite um cuidador
+        </Button>
       </div>
     </div>
   </nav>

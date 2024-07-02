@@ -1,0 +1,20 @@
+.main {
+  padding-top: 2rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+}
+
+@media (min-width: 515px) {
+  .main {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 514px) {
+  .main {
+    justify-content: flex-start;
+    gap: 0.5rem;
+  }
+}

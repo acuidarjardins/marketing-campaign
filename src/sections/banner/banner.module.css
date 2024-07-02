@@ -1,0 +1,38 @@
+.section {
+  height: fit-content;
+  max-height: var(--section-maxHeight, calc(100dvh - 10rem));
+  object-fit: contain;
+  margin: 0 2rem;
+}
+
+.banner_mobile {
+  height: fit-content;
+  max-height: var(--section-maxHeight, calc(100dvh - 10rem));
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.banner_desktop {
+  height: fit-content;
+  max-height: var(--section-maxHeight, calc(100dvh - 10rem));
+  max-width: 100%;
+  object-fit: contain;
+}
+
+@media (min-width: 1024px) {
+  .banner_mobile {
+    display: none;
+  }
+  .banner_desktop {
+    display: block;
+  }
+}
+
+@media (max-width: 1023px) {
+  .banner_desktop {
+    display: none;
+  }
+  .banner_mobile {
+    display: block;
+  }
+}

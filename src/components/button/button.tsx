@@ -1,21 +1,33 @@
 "use client";
 
-import { CSSProperties } from "react";
-
-import styles from "./button.module.css";
+import { CSSProperties, PropsWithChildren } from "react";
 import { whatsAppLink } from "@/modules/constants";
 import { sendGTMEvent } from "@next/third-parties/google";
 
+import styles from "./button.module.css";
+
 export type ButtonProps = {
-  title: string;
   width?: string;
+  height?: string;
   fontSize?: string;
+  background?: string;
+  backgroundHover?: string;
 };
 
-const Button = ({ title, width, fontSize }: ButtonProps) => {
+const Button = ({
+  children,
+  width,
+  height,
+  fontSize,
+  background,
+  backgroundHover,
+}: PropsWithChildren<ButtonProps>) => {
   const buttonStyle: CSSProperties = {
     "--button-width": width,
+    "--button-height": height,
     "--button-font-size": fontSize,
+    "--button-background": background,
+    "--button-background-hover": backgroundHover,
   } as React.CSSProperties;
 
   return (
@@ -25,7 +37,7 @@ const Button = ({ title, width, fontSize }: ButtonProps) => {
       href={whatsAppLink}
       onClick={() => sendGTMEvent({ event: "clickWhatsapp", value: "click" })}
     >
-      {title}
+      {children}
     </a>
   );
 };
