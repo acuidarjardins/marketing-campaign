@@ -2291,6 +2291,7 @@ __metadata:
     react-dom: "npm:^18"
     react-icons: "npm:^5.2.1"
     sharp: "npm:^0.33.4"
+    swiper: "npm:^11.1.4"
     typescript: "npm:^5"
   languageName: unknown
   linkType: soft
@@ -3200,6 +3201,13 @@ __metadata:
   version: 1.0.0
   resolution: "supports-preserve-symlinks-flag@npm:1.0.0"
   checksum: 10c0/6c4032340701a9950865f7ae8ef38578d8d7053f5e10518076e6554a9381fa91bd9c6850193695c141f32b21f979c985db07265a758867bac95de05f7d8aeb39
+  languageName: node
+  linkType: hard
+
+"swiper@npm:^11.1.4":
+  version: 11.1.4
+  resolution: "swiper@npm:11.1.4"
+  checksum: 10c0/a1e4b87f414f67f5da6a07b33d5ee20e54062d21f8bed88195d5d56decff6afddf683e130118b7fa12668de221f794ae63f6c073761b683a4b90bbd5eb585202
   languageName: node
   linkType: hard
 
