@@ -4,6 +4,7 @@ import {
   BenefitsSection,
   LaborIssuesSection,
   GoogleReviewsSection,
+  MapSection,
 } from "@/sections";
 
 import styles from "./page.module.css";
@@ -15,6 +16,7 @@ const Home = () => (
     <BenefitsSection />
     <LaborIssuesSection />
     <GoogleReviewsSection />
+    <MapSection />
   </main>
 );
 
