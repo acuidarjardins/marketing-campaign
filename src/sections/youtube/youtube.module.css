@@ -72,7 +72,7 @@
   }
 }
 
-@media (max-width: 764px) {
+@media (max-width: 786px) {
   .sub_section {
     flex-direction: column;
     align-items: center;
