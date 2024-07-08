@@ -17,9 +17,9 @@ const YoutubeSection = () => {
             <p>Qualidade de vida para todos.</p>
           </section>
         </div>
-        <Button width="15rem" background="#132E33" backgroundHover="#395358">
+        <Button width="17rem" background="#132E33" backgroundHover="#395358">
           <div className={styles.button_content}>
-            Solicitar serviço
+            Solicite um orçamento
             <BsArrowRight size="1.25rem" color="#96b570" />
           </div>
         </Button>
