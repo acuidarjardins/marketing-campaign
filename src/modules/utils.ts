@@ -1,11 +1,1 @@
-import { ROUTES } from "./constants";
-
-export const getGtmId = (route: string): string => {
-  switch (route) {
-    case ROUTES.ELDERLY_CARE:
-      return "AW-16633865118";
-
-    default:
-      return "GTM-NZLJ23Z";
-  }
-};
+export const getEnv = (key: string): string => process.env[key] || "";
