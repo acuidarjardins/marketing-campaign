@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
 
-const NotFoundPage = () => redirect("/hot-site");
+const NotFoundPage = () => redirect("/");
 
 export default NotFoundPage;
