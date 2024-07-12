@@ -1,4 +1,3 @@
-import Head from "next/head";
 import { GoogleTagManager } from "@next/third-parties/google";
 
 import {
@@ -15,9 +14,7 @@ import styles from "./page.module.css";
 
 const Home = () => (
   <>
-    <Head>
-      <GoogleTagManager gtmId="GTM-NZLJ23Z" />
-    </Head>
+    <GoogleTagManager gtmId="GTM-NZLJ23Z" />
     <BodyWrapper>
       <main className={styles.main}>
         <BannerSection maxHeight="640px" />
