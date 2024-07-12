@@ -10,8 +10,6 @@ const RootLayout = ({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) => {
-  return <html lang="pt_BR">{children}</html>;
-};
+}>) => <html lang="pt_BR">{children}</html>;
 
 export default RootLayout;

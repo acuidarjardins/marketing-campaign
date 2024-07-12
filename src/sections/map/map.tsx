@@ -1,5 +1,6 @@
 import { GoogleMapsEmbed } from "@next/third-parties/google";
 import styles from "./map.module.css";
+import { getEnv } from "@/modules/utils";
 
 const MapSection = () => (
   <section className={styles.section}>
@@ -13,7 +14,7 @@ const MapSection = () => (
     </h2>
     <div className={styles.map}>
       <GoogleMapsEmbed
-        apiKey={process.env.GOOGLE_MAPS_API_KEY || ""}
+        apiKey={getEnv("GOOGLE_MAPS_API_KEY")}
         zoom="16"
         style="width: 100%; height: 100%;"
         height={350}
