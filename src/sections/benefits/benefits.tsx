@@ -11,7 +11,11 @@ import { LiaCarSideSolid, LiaUserNurseSolid } from "react-icons/lia";
 import styles from "./benefits.module.css";
 import { Button } from "@/components";
 
-const BenefitsSection = () => {
+const BenefitsSection = ({
+  useAlternativeLink,
+}: {
+  useAlternativeLink?: boolean;
+}) => {
   const benefits: GridItemProps[] = [
     {
       icon: <BsHouseDoor size={50} color="#78a046" />,
@@ -58,7 +62,12 @@ const BenefitsSection = () => {
           benefits.map(({ icon, text }) => <GridItem icon={icon} text={text} />)
         )}
       </div>
-      <Button width="15rem" background="#A5B636" backgroundHover="#a5b636d4">
+      <Button
+        width="15rem"
+        background="#A5B636"
+        backgroundHover="#a5b636d4"
+        useAlternativeLink={useAlternativeLink}
+      >
         <div className={styles.button_content}>Fale conosco agora</div>
       </Button>
     </section>

@@ -3,7 +3,11 @@ import styles from "./labor-issues.module.css";
 import { Button } from "@/components";
 import { LuMousePointerClick } from "react-icons/lu";
 
-const LaborIssuesSection = () => (
+const LaborIssuesSection = ({
+  useAlternativeLink,
+}: {
+  useAlternativeLink?: boolean;
+}) => (
   <section className={styles.section}>
     <Image
       alt="Foto de uma de nossas cuidadoras com uma de nossas clientes"
@@ -23,7 +27,12 @@ const LaborIssuesSection = () => (
         <span>Nossa empresa se encarrega do contato </span>
         <span>com o cuidador e de sua contratação.</span>
       </p>
-      <Button width="15rem" background="#e7ecec" backgroundHover="#e7ececea">
+      <Button
+        width="15rem"
+        background="#e7ecec"
+        backgroundHover="#e7ececea"
+        useAlternativeLink={useAlternativeLink}
+      >
         <div className={styles.button_content}>
           Entre em contato
           <LuMousePointerClick size="1.5rem" color="#5a723c" />

@@ -16,13 +16,13 @@ import { getEnv } from "@/modules/utils";
 const Home = () => (
   <>
     <GoogleTagManager gtmId={getEnv("ACUIDAR_EXCPETION")} />
-    <BodyWrapper>
+    <BodyWrapper useAlternativeLink>
       <main className={styles.main}>
         <BannerSection maxHeight="640px" />
-        <YoutubeSection />
-        <BenefitsSection />
-        <LaborIssuesSection />
-        <GoogleReviewsSection />
+        <YoutubeSection useAlternativeLink />
+        <BenefitsSection useAlternativeLink />
+        <LaborIssuesSection useAlternativeLink />
+        <GoogleReviewsSection useAlternativeLink />
         <MapSection />
       </main>
     </BodyWrapper>

@@ -4,7 +4,11 @@ import styles from "./google-reviews.module.css";
 import Image from "next/image";
 import { Button, Carousel } from "@/components";
 
-const GoogleReviewsSection = () => {
+const GoogleReviewsSection = ({
+  useAlternativeLink,
+}: {
+  useAlternativeLink?: boolean;
+}) => {
   const reviews: CarouselItemProps[] = [
     {
       image: "/google_review_stefanie.png",
@@ -129,7 +133,12 @@ const GoogleReviewsSection = () => {
           slideClassName={styles.carousel_slide}
         />
       </div>
-      <Button width="15rem" background="#063e24e1" backgroundHover="#063e24bd">
+      <Button
+        width="15rem"
+        background="#063e24e1"
+        backgroundHover="#063e24bd"
+        useAlternativeLink={useAlternativeLink}
+      >
         <div className={styles.button_content}>Faça um orçamento</div>
       </Button>
     </section>
