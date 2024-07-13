@@ -2,7 +2,7 @@
 
 import { Children, ReactNode } from "react";
 import { register } from "swiper/element";
-import { Navigation, Autoplay } from "swiper/modules";
+import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
@@ -25,10 +25,9 @@ const CustomCarousel = ({
 }: CustomCarouselProps) => {
   return (
     <Swiper
-      modules={[Navigation, Autoplay]}
+      modules={[Navigation]}
       slidesPerView={3}
       navigation
-      autoplay={{ delay: 4000 }}
       loop
       className={containerClassName}
       breakpoints={{
