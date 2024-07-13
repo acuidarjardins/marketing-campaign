@@ -4,7 +4,11 @@ import { YouTubeEmbed } from "@next/third-parties/google";
 import styles from "./youtube.module.css";
 import Button from "../../components/button/button";
 
-const YoutubeSection = () => {
+const YoutubeSection = ({
+  useAlternativeLink,
+}: {
+  useAlternativeLink?: boolean;
+}) => {
   return (
     <section className={styles.section}>
       <div className={styles.sub_section}>
@@ -17,7 +21,12 @@ const YoutubeSection = () => {
             <p>Qualidade de vida para todos.</p>
           </section>
         </div>
-        <Button width="17rem" background="#132E33" backgroundHover="#395358">
+        <Button
+          width="17rem"
+          background="#132E33"
+          backgroundHover="#395358"
+          useAlternativeLink={useAlternativeLink}
+        >
           <div className={styles.button_content}>
             Solicite um orçamento
             <BsArrowRight size="1.25rem" color="#96b570" />

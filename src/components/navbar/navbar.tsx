@@ -1,10 +1,13 @@
 import Image from "next/image";
-import { whatsAppLink } from "@/modules/constants";
+import {
+  whatsAppAlternativeLink,
+  whatsAppDefaultLink,
+} from "@/modules/constants";
 
 import Button from "../button/button";
 import styles from "./navbar.module.css";
 
-const Navbar = () => (
+const Navbar = ({ useAlternativeLink }: { useAlternativeLink?: boolean }) => (
   <nav className={styles.navbar}>
     <Image
       alt="Logo Acuidar"
@@ -14,7 +17,11 @@ const Navbar = () => (
       priority
     />
     <div className={styles.whatsapp_cta}>
-      <a href={whatsAppLink}>
+      <a
+        href={
+          useAlternativeLink ? whatsAppAlternativeLink : whatsAppDefaultLink
+        }
+      >
         <Image
           alt="Whatsapp"
           src="/whatsapp.svg"

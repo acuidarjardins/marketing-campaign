@@ -1,7 +1,10 @@
 "use client";
 
 import { CSSProperties, PropsWithChildren } from "react";
-import { whatsAppLink } from "@/modules/constants";
+import {
+  whatsAppAlternativeLink,
+  whatsAppDefaultLink,
+} from "@/modules/constants";
 import { sendGTMEvent } from "@next/third-parties/google";
 
 import styles from "./button.module.css";
@@ -12,6 +15,7 @@ export type ButtonProps = {
   fontSize?: string;
   background?: string;
   backgroundHover?: string;
+  useAlternativeLink?: boolean;
 };
 
 const Button = ({
@@ -21,6 +25,7 @@ const Button = ({
   fontSize,
   background,
   backgroundHover,
+  useAlternativeLink,
 }: PropsWithChildren<ButtonProps>) => {
   const buttonStyle: CSSProperties = {
     "--button-width": width,
@@ -34,7 +39,7 @@ const Button = ({
     <a
       className={styles.button}
       style={buttonStyle}
-      href={whatsAppLink}
+      href={useAlternativeLink ? whatsAppAlternativeLink : whatsAppDefaultLink}
       onClick={() => sendGTMEvent({ event: "clickWhatsapp", value: "click" })}
     >
       {children}
