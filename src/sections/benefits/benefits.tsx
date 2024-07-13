@@ -1,7 +1,7 @@
 import { Children, ReactNode } from "react";
 
 import { VscBook } from "react-icons/vsc";
-import { BsHouseDoor } from "react-icons/bs";
+import { BsArrowRight, BsHouseDoor } from "react-icons/bs";
 import { PiHeartbeat } from "react-icons/pi";
 import { FaPeopleRoof } from "react-icons/fa6";
 import { GrDocumentText } from "react-icons/gr";
@@ -9,6 +9,7 @@ import { MdPublishedWithChanges } from "react-icons/md";
 import { LiaCarSideSolid, LiaUserNurseSolid } from "react-icons/lia";
 
 import styles from "./benefits.module.css";
+import { Button } from "@/components";
 
 const BenefitsSection = () => {
   const benefits: GridItemProps[] = [
@@ -57,6 +58,9 @@ const BenefitsSection = () => {
           benefits.map(({ icon, text }) => <GridItem icon={icon} text={text} />)
         )}
       </div>
+      <Button width="15rem" background="#A5B636" backgroundHover="#a5b636d4">
+        <div className={styles.button_content}>Fale conosco agora</div>
+      </Button>
     </section>
   );
 };

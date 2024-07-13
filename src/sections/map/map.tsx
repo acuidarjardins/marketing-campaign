@@ -5,10 +5,9 @@ import { getEnv } from "@/modules/utils";
 const MapSection = () => (
   <section className={styles.section}>
     <h2 className={styles.title}>
-      <span>Estamos prontos para oferecer</span>
-      <span> o que há de melhor em cuidados</span>
+      <span>O melhor cuidado</span>
+      <span> a quem você ama,</span>
       <span className={styles.last_line}>
-        <span> para quem você ama</span>
         <span> no conforto do seu lar.</span>
       </span>
     </h2>
