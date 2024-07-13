@@ -23,7 +23,7 @@ const LaborIssuesSection = () => (
         <span>Nossa empresa se encarrega do contato </span>
         <span>com o cuidador e de sua contratação.</span>
       </p>
-      <Button width="15rem" background="#e7ecec" backgroundHover="#395358">
+      <Button width="15rem" background="#e7ecec" backgroundHover="#e7ececea">
         <div className={styles.button_content}>
           Entre em contato
           <LuMousePointerClick size="1.5rem" color="#5a723c" />

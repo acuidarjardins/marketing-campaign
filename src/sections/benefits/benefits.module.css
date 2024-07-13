@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 2rem;
+  padding: 2rem 0;
   gap: 2rem;
   width: 100vw;
 }
@@ -43,6 +43,14 @@
   line-height: 1.15rem;
 }
 
+.button_content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+
 @media (max-width: 764px) {
   .grid {
     gap: 0;
@@ -51,7 +59,7 @@
     font-size: 1.25rem;
   }
   .item_container {
-    font-size: 0.9rem;
+    font-size: 1.2rem;
   }
 }
 
