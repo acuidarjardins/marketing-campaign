@@ -1,4 +1,4 @@
-import { GoogleTagManager } from "@next/third-parties/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 import {
   MapSection,
@@ -11,11 +11,10 @@ import {
 import { BodyWrapper } from "@/components";
 
 import styles from "./page.module.css";
-import { getEnv } from "@/modules/utils";
 
 const Home = () => (
   <>
-    <GoogleTagManager gtmId={getEnv("ACUIDAR_EXCPETION")} />
+    <GoogleAnalytics gaId="AW-16633865118" />
     <BodyWrapper useAlternativeLink>
       <main className={styles.main}>
         <BannerSection maxHeight="640px" />
