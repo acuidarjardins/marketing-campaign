@@ -14,7 +14,7 @@ import styles from "./page.module.css";
 
 const Home = () => (
   <>
-    <GoogleAnalytics gaId="AW-16633865118" />
+    <GoogleAnalytics gaId="GT-NGWVVNGM" />
     <BodyWrapper useAlternativeLink>
       <main className={styles.main}>
         <BannerSection maxHeight="640px" />
