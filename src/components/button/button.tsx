@@ -5,7 +5,7 @@ import {
   whatsAppAlternativeLink,
   whatsAppDefaultLink,
 } from "@/modules/constants";
-import { sendGTMEvent } from "@next/third-parties/google";
+import { sendGAEvent, sendGTMEvent } from "@next/third-parties/google";
 
 import styles from "./button.module.css";
 
@@ -40,7 +40,15 @@ const Button = ({
       className={styles.button}
       style={buttonStyle}
       href={useAlternativeLink ? whatsAppAlternativeLink : whatsAppDefaultLink}
-      onClick={() => sendGTMEvent({ event: "clickWhatsapp", value: "click" })}
+      onClick={() =>
+        useAlternativeLink
+          ? sendGAEvent({
+              event: "conversion",
+              value: "clickWhatsapp",
+              send_to: "AW-16633865118/SqSYCMD9n8IZEJ7H0vs9",
+            })
+          : sendGTMEvent({ event: "clickWhatsapp", value: "click" })
+      }
     >
       {children}
     </a>
