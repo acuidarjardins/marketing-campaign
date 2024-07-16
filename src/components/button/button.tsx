@@ -40,11 +40,7 @@ const Button = ({
       className={styles.button}
       style={buttonStyle}
       href={useAlternativeLink ? whatsAppAlternativeLink : whatsAppDefaultLink}
-      onClick={() => {
-        if (useAlternativeLink) return window.gtag_report_conversion();
-
-        sendGTMEvent({ event: "clickWhatsapp", value: "click" });
-      }}
+      onClick={() => sendGTMEvent({ event: "clickWhatsapp", value: "click" })}
     >
       {children}
     </a>

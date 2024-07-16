@@ -1,4 +1,5 @@
-import Script from "next/script";
+import { GoogleTagManager } from "@next/third-parties/google";
+
 import {
   MapSection,
   BannerSection,
@@ -7,40 +8,14 @@ import {
   LaborIssuesSection,
   GoogleReviewsSection,
 } from "@/sections";
+import { getEnv } from "@/modules/utils";
 import { BodyWrapper } from "@/components";
 
 import styles from "./page.module.css";
 
 const Home = () => (
   <>
-    <Script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=AW-16633865118"
-    ></Script>
-    <Script id="gtag-init">
-      {`
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'AW-16633865118');
-      `}
-    </Script>
-    <Script id="gtag-conversion">
-      {`
-        function gtag_report_conversion(url) {
-          var callback = function () {
-            if (typeof(url) != 'undefined') {
-              window.location = url;
-            }
-          };
-          gtag('event', 'conversion', {
-              'send_to': 'AW-16633865118/d2tMCOfUqcMZEJ7H0vs9',
-              'event_callback': callback
-          });
-          return false;
-        }
-      `}
-    </Script>
+    <GoogleTagManager gtmId={getEnv("ACUIDAR_EXTERNAL_GTM")} />
     <BodyWrapper useAlternativeLink>
       <main className={styles.main}>
         <BannerSection maxHeight="640px" />
