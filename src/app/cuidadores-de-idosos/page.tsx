@@ -10,19 +10,22 @@ import {
 import { BodyWrapper } from "@/components";
 
 import styles from "./page.module.css";
+import { getEnv } from "@/modules/utils";
 
 const Home = () => (
   <>
     <Script
       async
-      src="https://www.googletagmanager.com/gtag/js?id=AW-16633865118"
+      src={`https://www.googletagmanager.com/gtag/js?id=${getEnv(
+        "ACUIDAR_GTAG_ID"
+      )}`}
     ></Script>
     <Script id="gtag-init">
       {`
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'AW-16633865118');
+        gtag('config', '${getEnv("ACUIDAR_GTAG_ID")}');
       `}
     </Script>
     <Script id="gtag-conversion">
@@ -34,7 +37,9 @@ const Home = () => (
             }
           };
           gtag('event', 'conversion', {
-              'send_to': 'AW-16633865118/d2tMCOfUqcMZEJ7H0vs9',
+              'send_to': '${getEnv("ACUIDAR_GTAG_ID")}/${getEnv(
+        "ACUIDAR_GTAG_METRIC"
+      )}',
               'event_callback': callback
           });
           return false;
