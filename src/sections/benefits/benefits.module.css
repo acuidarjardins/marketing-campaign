@@ -7,6 +7,11 @@
   gap: 2rem;
   width: 100vw;
 }
+.button_div {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
 
 .title {
   max-width: 50rem;
@@ -52,6 +57,9 @@
 }
 
 @media (max-width: 764px) {
+  .button_div {
+    flex-direction: column;
+   }
   .grid {
     gap: 0;
   }
