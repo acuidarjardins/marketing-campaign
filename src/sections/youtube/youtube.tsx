@@ -21,17 +21,29 @@ const YoutubeSection = ({
             <p>Qualidade de vida para todos.</p>
           </section>
         </div>
-        <Button
-          width="17rem"
-          background="#132E33"
-          backgroundHover="#395358"
-          useAlternativeLink={useAlternativeLink}
-        >
-          <div className={styles.button_content}>
-            Solicite um orçamento
-            <BsArrowRight size="1.25rem" color="#96b570" />
-          </div>
-        </Button>
+        <div className={styles.button_div}>
+          <Button
+            width="18rem"
+            background="#132E33"
+            backgroundHover="#395358"
+            useAlternativeLink={useAlternativeLink}
+          >
+            <div className={styles.button_content}>
+              Solicite um orçamento
+              <BsArrowRight size="1.25rem" color="#96b570" />
+            </div>
+          </Button>
+          <Button
+            width="18rem"
+            skipAnalytics
+            background="#F18621"
+            backgroundHover="#d57b27"
+          >
+            <div className={styles.button_content}>
+              Quer trabalhar conosco?
+            </div>
+          </Button>
+        </div>
       </div>
       <div className={styles.youtube_embed}>
         <YouTubeEmbed

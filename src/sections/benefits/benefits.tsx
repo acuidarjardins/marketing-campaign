@@ -62,14 +62,24 @@ const BenefitsSection = ({
           benefits.map(({ icon, text }) => <GridItem icon={icon} text={text} />)
         )}
       </div>
-      <Button
-        width="15rem"
-        background="#A5B636"
-        backgroundHover="#a5b636d4"
-        useAlternativeLink={useAlternativeLink}
-      >
-        <div className={styles.button_content}>Fale conosco agora</div>
-      </Button>
+      <div className={styles.button_div}>
+        <Button
+          width="15rem"
+          background="#A5B636"
+          backgroundHover="#a5b636d4"
+          useAlternativeLink={useAlternativeLink}
+        >
+          <div className={styles.button_content}>Fale conosco agora</div>
+        </Button>
+        <Button
+          width="15rem"
+          skipAnalytics
+          background="#F18621"
+          backgroundHover="#d57b27"
+        >
+          <div className={styles.button_content}>Trabalhe conosco</div>
+        </Button>
+      </div>
     </section>
   );
 };

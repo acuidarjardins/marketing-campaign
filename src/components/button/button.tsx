@@ -14,6 +14,7 @@ export type ButtonProps = {
   height?: string;
   fontSize?: string;
   background?: string;
+  skipAnalytics?: boolean;
   backgroundHover?: string;
   useAlternativeLink?: boolean;
 };
@@ -26,6 +27,7 @@ const Button = ({
   background,
   backgroundHover,
   useAlternativeLink,
+  skipAnalytics = false,
 }: PropsWithChildren<ButtonProps>) => {
   const buttonStyle: CSSProperties = {
     "--button-width": width,
@@ -41,6 +43,7 @@ const Button = ({
       style={buttonStyle}
       href={useAlternativeLink ? whatsAppAlternativeLink : whatsAppDefaultLink}
       onClick={() => {
+        if(skipAnalytics) return;
         if (useAlternativeLink) return window.gtag_report_conversion();
 
         sendGTMEvent({ event: "clickWhatsapp", value: "click" });
