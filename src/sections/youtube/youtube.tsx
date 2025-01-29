@@ -35,6 +35,7 @@ const YoutubeSection = ({
           </Button>
           <Button
             width="18rem"
+            customHref="https://ferramentas.ocondado.com.br/acuidar-sp-jardins-recrutamento"
             skipAnalytics
             background="#F18621"
             backgroundHover="#d57b27"

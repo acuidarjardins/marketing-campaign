@@ -74,6 +74,7 @@ const BenefitsSection = ({
         <Button
           width="15rem"
           skipAnalytics
+          customHref="https://ferramentas.ocondado.com.br/acuidar-sp-jardins-recrutamento"
           background="#F18621"
           backgroundHover="#d57b27"
         >
