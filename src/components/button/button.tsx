@@ -1,6 +1,6 @@
 "use client";
 
-import { CSSProperties, PropsWithChildren } from "react";
+import { CSSProperties, PropsWithChildren, useMemo } from "react";
 import {
   whatsAppAlternativeLink,
   whatsAppDefaultLink,
@@ -13,6 +13,7 @@ export type ButtonProps = {
   width?: string;
   height?: string;
   fontSize?: string;
+  customHref?: string;
   background?: string;
   skipAnalytics?: boolean;
   backgroundHover?: string;
@@ -24,6 +25,7 @@ const Button = ({
   width,
   height,
   fontSize,
+  customHref,
   background,
   backgroundHover,
   useAlternativeLink,
@@ -37,13 +39,21 @@ const Button = ({
     "--button-background-hover": backgroundHover,
   } as React.CSSProperties;
 
+  const href = useMemo(() => {
+    if (customHref) return customHref;
+
+    return useAlternativeLink ?
+      whatsAppAlternativeLink :
+      whatsAppDefaultLink;
+  }, [customHref, useAlternativeLink]);
+
   return (
     <a
       className={styles.button}
       style={buttonStyle}
-      href={useAlternativeLink ? whatsAppAlternativeLink : whatsAppDefaultLink}
+      href={href}
       onClick={() => {
-        if(skipAnalytics) return;
+        if (skipAnalytics) return;
         if (useAlternativeLink) return window.gtag_report_conversion();
 
         sendGTMEvent({ event: "clickWhatsapp", value: "click" });
