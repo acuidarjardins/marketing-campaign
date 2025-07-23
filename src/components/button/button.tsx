@@ -10,6 +10,7 @@ import { sendGTMEvent } from "@next/third-parties/google";
 import styles from "./button.module.css";
 
 export type ButtonProps = {
+  isLeadsterCTA?: boolean;
   width?: string;
   height?: string;
   fontSize?: string;
@@ -21,6 +22,7 @@ export type ButtonProps = {
 };
 
 const Button = ({
+  isLeadsterCTA,
   children,
   width,
   height,
@@ -40,14 +42,13 @@ const Button = ({
   } as React.CSSProperties;
 
   const href = useMemo(() => {
+    if (isLeadsterCTA) return undefined;
     if (customHref) return customHref;
 
-    return useAlternativeLink ?
-      whatsAppAlternativeLink :
-      whatsAppDefaultLink;
-  }, [customHref, useAlternativeLink]);
+    return useAlternativeLink ? whatsAppAlternativeLink : whatsAppDefaultLink;
+  }, [isLeadsterCTA, customHref, useAlternativeLink]);
 
-  return (
+  const Button = (
     <a
       className={styles.button}
       style={buttonStyle}
@@ -62,6 +63,12 @@ const Button = ({
       {children}
     </a>
   );
+
+  if (isLeadsterCTA) {
+    return <div className="leadster-cta">{Button}</div>;
+  }
+
+  return Button;
 };
 
 export default Button;

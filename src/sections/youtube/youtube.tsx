@@ -26,6 +26,7 @@ const YoutubeSection = ({
             width="18rem"
             background="#132E33"
             backgroundHover="#395358"
+            isLeadsterCTA
             useAlternativeLink={useAlternativeLink}
           >
             <div className={styles.button_content}>
@@ -40,9 +41,7 @@ const YoutubeSection = ({
             background="#F18621"
             backgroundHover="#d57b27"
           >
-            <div className={styles.button_content}>
-              Quer trabalhar conosco?
-            </div>
+            <div className={styles.button_content}>Quer trabalhar conosco?</div>
           </Button>
         </div>
       </div>

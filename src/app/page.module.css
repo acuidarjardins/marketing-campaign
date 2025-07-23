@@ -6,6 +6,10 @@
   width: 100vw;
 }
 
+.leadster_cta {
+  cursor: pointer;
+}
+
 @media (min-width: 515px) {
   .main {
     justify-content: center;
