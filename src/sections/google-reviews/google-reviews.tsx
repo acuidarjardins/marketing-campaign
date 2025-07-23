@@ -134,6 +134,7 @@ const GoogleReviewsSection = ({
         />
       </div>
       <Button
+        isLeadsterCTA
         width="15rem"
         background="#063e24e1"
         backgroundHover="#063e24bd"
