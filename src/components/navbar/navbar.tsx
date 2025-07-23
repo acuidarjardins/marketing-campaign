@@ -1,13 +1,9 @@
 import Image from "next/image";
-import {
-  whatsAppAlternativeLink,
-  whatsAppDefaultLink,
-} from "@/modules/constants";
 
 import Button from "../button/button";
 import styles from "./navbar.module.css";
 
-const Navbar = ({ useAlternativeLink }: { useAlternativeLink?: boolean }) => (
+const Navbar = () => (
   <nav className={styles.navbar}>
     <Image
       alt="Logo Acuidar"
@@ -17,11 +13,7 @@ const Navbar = ({ useAlternativeLink }: { useAlternativeLink?: boolean }) => (
       priority
     />
     <div className={styles.whatsapp_cta}>
-      <a
-        href={
-          useAlternativeLink ? whatsAppAlternativeLink : whatsAppDefaultLink
-        }
-      >
+      <div className="leadster-cta">
         <Image
           alt="Whatsapp"
           src="/whatsapp.svg"
@@ -29,9 +21,9 @@ const Navbar = ({ useAlternativeLink }: { useAlternativeLink?: boolean }) => (
           height={48}
           priority
         />
-      </a>
+      </div>
       <div className={styles.whatsapp_button}>
-        <Button width="220px" fontSize="14px">
+        <Button isLeadsterCTA width="220px" fontSize="14px">
           Solicite um cuidador
         </Button>
       </div>

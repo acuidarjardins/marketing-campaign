@@ -6,12 +6,9 @@ import Footer from "../footer/footer";
 
 const poppins = Poppins({ subsets: ["latin"], weight: ["300", "400", "500"] });
 
-const BodyWrapper = ({
-  children,
-  useAlternativeLink,
-}: PropsWithChildren<{ useAlternativeLink?: boolean }>) => (
+const BodyWrapper = ({ children }: PropsWithChildren) => (
   <body className={poppins.className} suppressHydrationWarning={true}>
-    <Navbar useAlternativeLink={useAlternativeLink} />
+    <Navbar />
     {children}
     <Footer />
   </body>

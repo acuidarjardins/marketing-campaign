@@ -46,7 +46,7 @@ const Home = () => (
         }
       `}
     </Script>
-    <BodyWrapper useAlternativeLink>
+    <BodyWrapper>
       <main className={styles.main}>
         <BannerSection maxHeight="640px" />
         <YoutubeSection useAlternativeLink />

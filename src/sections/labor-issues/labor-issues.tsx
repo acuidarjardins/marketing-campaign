@@ -28,6 +28,7 @@ const LaborIssuesSection = ({
         <span>com o cuidador e de sua contratação.</span>
       </p>
       <Button
+        isLeadsterCTA
         width="15rem"
         background="#e7ecec"
         backgroundHover="#e7ececea"
