@@ -1,7 +1,7 @@
 import { Children, ReactNode } from "react";
 
 import { VscBook } from "react-icons/vsc";
-import { BsArrowRight, BsHouseDoor } from "react-icons/bs";
+import { BsHouseDoor } from "react-icons/bs";
 import { PiHeartbeat } from "react-icons/pi";
 import { FaPeopleRoof } from "react-icons/fa6";
 import { GrDocumentText } from "react-icons/gr";
@@ -64,7 +64,7 @@ const BenefitsSection = ({
       </div>
       <div className={styles.button_div}>
         <Button
-          isLeadsterCTA
+          isLeadsterCTA={false}
           width="15rem"
           background="#A5B636"
           backgroundHover="#a5b636d4"

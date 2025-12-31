@@ -8,7 +8,7 @@ const poppins = Poppins({ subsets: ["latin"], weight: ["300", "400", "500"] });
 
 const BodyWrapper = ({ children }: PropsWithChildren) => (
   <body className={poppins.className} suppressHydrationWarning={true}>
-    <Navbar />
+    <Navbar isLeadsterCTA={false} />
     {children}
     <Footer />
   </body>

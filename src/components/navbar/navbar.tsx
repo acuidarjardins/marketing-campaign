@@ -2,8 +2,11 @@ import Image from "next/image";
 
 import Button from "../button/button";
 import styles from "./navbar.module.css";
+ type NavbarProps = {
+  isLeadsterCTA?: boolean;
+ }
 
-const Navbar = () => (
+const Navbar = ({ isLeadsterCTA }: NavbarProps) => (
   <nav className={styles.navbar}>
     <Image
       alt="Logo Acuidar"
@@ -13,7 +16,7 @@ const Navbar = () => (
       priority
     />
     <div className={styles.whatsapp_cta}>
-      <div className="leadster-cta">
+      <div className={isLeadsterCTA ? "leadster-cta" : ""}>
         <Image
           alt="Whatsapp"
           src="/whatsapp.svg"
@@ -23,7 +26,7 @@ const Navbar = () => (
         />
       </div>
       <div className={styles.whatsapp_button}>
-        <Button isLeadsterCTA width="220px" fontSize="14px">
+        <Button isLeadsterCTA={isLeadsterCTA} width="220px" fontSize="14px">
           Solicite um cuidador
         </Button>
       </div>
