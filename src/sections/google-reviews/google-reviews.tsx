@@ -1,4 +1,4 @@
-import { Children, ReactNode } from "react";
+import { Children } from "react";
 
 import styles from "./google-reviews.module.css";
 import Image from "next/image";
@@ -134,7 +134,7 @@ const GoogleReviewsSection = ({
         />
       </div>
       <Button
-        isLeadsterCTA
+        isLeadsterCTA={false}
         width="15rem"
         background="#063e24e1"
         backgroundHover="#063e24bd"
