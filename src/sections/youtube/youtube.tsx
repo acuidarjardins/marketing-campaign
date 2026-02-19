@@ -3,6 +3,7 @@ import { YouTubeEmbed } from "@next/third-parties/google";
 
 import styles from "./youtube.module.css";
 import Button from "../../components/button/button";
+import { workWithUsLink } from "@/modules/constants";
 
 const YoutubeSection = ({
   useAlternativeLink,
@@ -36,7 +37,7 @@ const YoutubeSection = ({
           </Button>
           <Button
             width="18rem"
-            customHref="https://ferramentas.ocondado.com.br/acuidar-sp-jardins-recrutamento"
+            customHref={workWithUsLink}
             skipAnalytics
             background="#F18621"
             backgroundHover="#d57b27"

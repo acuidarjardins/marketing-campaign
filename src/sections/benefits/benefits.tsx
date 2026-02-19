@@ -10,6 +10,7 @@ import { LiaCarSideSolid, LiaUserNurseSolid } from "react-icons/lia";
 
 import styles from "./benefits.module.css";
 import { Button } from "@/components";
+import { workWithUsLink } from "@/modules/constants";
 
 const BenefitsSection = ({
   useAlternativeLink,
@@ -75,7 +76,7 @@ const BenefitsSection = ({
         <Button
           width="15rem"
           skipAnalytics
-          customHref="https://ferramentas.ocondado.com.br/acuidar-sp-jardins-recrutamento"
+          customHref={workWithUsLink}
           background="#F18621"
           backgroundHover="#d57b27"
         >
