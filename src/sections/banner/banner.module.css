@@ -9,7 +9,6 @@
     position: relative;
     overflow: hidden;
     width: 100%;
-    min-height: var(--section-maxHeight, calc(100dvh));
     display: flex;
     align-items: center;
     justify-content: center;
