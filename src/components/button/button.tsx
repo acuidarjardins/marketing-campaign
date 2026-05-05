@@ -6,6 +6,7 @@ import {
   whatsAppDefaultLink,
 } from "@/modules/constants";
 import { sendGTMEvent } from "@next/third-parties/google";
+import { useLeadModal } from "@/contexts/lead-modal-context";
 
 import styles from "./button.module.css";
 
@@ -19,6 +20,7 @@ export type ButtonProps = {
   skipAnalytics?: boolean;
   backgroundHover?: string;
   useAlternativeLink?: boolean;
+  source?: number;
 };
 
 const Button = ({
@@ -32,7 +34,12 @@ const Button = ({
   backgroundHover,
   useAlternativeLink,
   skipAnalytics = false,
+  source,
 }: PropsWithChildren<ButtonProps>) => {
+  const { openIntentModal, defaultSource } = useLeadModal();
+
+  const resolvedSource = source ?? defaultSource;
+
   const buttonStyle: CSSProperties = {
     "--button-width": width,
     "--button-height": height,
@@ -41,23 +48,47 @@ const Button = ({
     "--button-background-hover": backgroundHover,
   } as React.CSSProperties;
 
+  const whatsappUrl = useMemo(
+    () => (useAlternativeLink ? whatsAppAlternativeLink : whatsAppDefaultLink),
+    [useAlternativeLink]
+  );
+
+  const isWhatsAppCTA = !isLeadsterCTA && !customHref;
+
   const href = useMemo(() => {
     if (isLeadsterCTA) return undefined;
     if (customHref) return customHref;
+    return undefined;
+  }, [isLeadsterCTA, customHref]);
 
-    return useAlternativeLink ? whatsAppAlternativeLink : whatsAppDefaultLink;
-  }, [isLeadsterCTA, customHref, useAlternativeLink]);
+  const handleClick = () => {
+    if (isWhatsAppCTA) {
+      if (!skipAnalytics) {
+        if (useAlternativeLink) {
+          window.gtag_report_conversion();
+        } else {
+          sendGTMEvent({ event: "clickWhatsapp", value: "click" });
+        }
+      }
+      openIntentModal(resolvedSource, whatsappUrl);
+      return;
+    }
 
-  const Button = (
+    if (skipAnalytics) return;
+    if (useAlternativeLink) return window.gtag_report_conversion();
+    sendGTMEvent({ event: "clickWhatsapp", value: "click" });
+  };
+
+  const ButtonEl = (
     <a
       className={styles.button}
       style={buttonStyle}
       href={href}
-      onClick={() => {
-        if (skipAnalytics) return;
-        if (useAlternativeLink) return window.gtag_report_conversion();
-
-        sendGTMEvent({ event: "clickWhatsapp", value: "click" });
+      onClick={(e) => {
+        if (isWhatsAppCTA) {
+          e.preventDefault();
+        }
+        handleClick();
       }}
     >
       {children}
@@ -65,10 +96,10 @@ const Button = ({
   );
 
   if (isLeadsterCTA) {
-    return <div className="leadster-cta">{Button}</div>;
+    return <div className="leadster-cta">{ButtonEl}</div>;
   }
 
-  return Button;
+  return ButtonEl;
 };
 
 export default Button;

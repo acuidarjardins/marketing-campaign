@@ -9,14 +9,15 @@ import {
   GoogleReviewsSection,
 } from "@/sections";
 import { BodyWrapper } from "@/components";
+import { FormSources } from "@/modules/constants";
 
 import styles from "./page.module.css";
 import { getEnv } from "@/modules/utils";
 
-const Home = () => (
+const EmpresaDeCuidadores = () => (
   <>
     <GoogleTagManager gtmId={getEnv("ACUIDAR_DEFAULT_GTM")} />
-    <BodyWrapper ctaMode="direct">
+    <BodyWrapper ctaMode="lead-only" defaultSource={FormSources.REDE_DE_PESQUISA}>
       <main className={styles.main}>
         <BannerSection maxHeight="640px" />
         <YoutubeSection />
@@ -29,4 +30,4 @@ const Home = () => (
   </>
 );
 
-export default Home;
+export default EmpresaDeCuidadores;

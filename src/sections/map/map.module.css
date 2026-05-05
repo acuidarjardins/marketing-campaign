@@ -17,6 +17,18 @@
   margin-bottom: 1.5rem;
 }
 
+.map_link {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #063e24;
+  text-decoration: none;
+  margin-bottom: -0.5rem;
+}
+
+.map_link:hover {
+  text-decoration: underline;
+}
+
 .map {
   width: 100%;
   height: 100%;

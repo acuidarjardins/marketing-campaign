@@ -1,17 +1,26 @@
 import { PropsWithChildren } from "react";
-import { Poppins } from "next/font/google";
-
+import { CtaMode } from "@/modules/constants";
 import Navbar from "../navbar/navbar";
 import Footer from "../footer/footer";
+import ClientProviders from "./client-providers";
 
-const poppins = Poppins({ subsets: ["latin"], weight: ["300", "400", "500"] });
+type BodyWrapperProps = PropsWithChildren<{
+  ctaMode?: CtaMode;
+  defaultSource?: number;
+  isLeadsterCTA?: boolean;
+}>;
 
-const BodyWrapper = ({ children }: PropsWithChildren) => (
-  <body className={poppins.className} suppressHydrationWarning={true}>
-    <Navbar isLeadsterCTA={false} />
+const BodyWrapper = ({
+  children,
+  ctaMode,
+  defaultSource,
+  isLeadsterCTA = false,
+}: BodyWrapperProps) => (
+  <ClientProviders ctaMode={ctaMode} defaultSource={defaultSource}>
+    <Navbar isLeadsterCTA={isLeadsterCTA} />
     {children}
     <Footer />
-  </body>
+  </ClientProviders>
 );
 
 export default BodyWrapper;

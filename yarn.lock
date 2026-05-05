@@ -65,6 +65,58 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@floating-ui/core@npm:^1.7.5":
+  version: 1.7.5
+  resolution: "@floating-ui/core@npm:1.7.5"
+  dependencies:
+    "@floating-ui/utils": "npm:^0.2.11"
+  checksum: 10c0/f9c52205e198b231d63a387b09c659aab08c46a1899e0b0bbe147b8b4f048b546f15ba17cb5d2a471da9534f1883d979425e13e5c4ceee67be63e4b0abd4db5d
+  languageName: node
+  linkType: hard
+
+"@floating-ui/dom@npm:^1.7.6":
+  version: 1.7.6
+  resolution: "@floating-ui/dom@npm:1.7.6"
+  dependencies:
+    "@floating-ui/core": "npm:^1.7.5"
+    "@floating-ui/utils": "npm:^0.2.11"
+  checksum: 10c0/5c098e0d7b58c9bc769f276cca1766994c2c9c70c92d091a61bba8b3e9be53c011e0a79a8457fc2fb2f3d91697a26eb52e0a4962ef936dc963b45f58613c212f
+  languageName: node
+  linkType: hard
+
+"@floating-ui/react-dom@npm:^2.1.8":
+  version: 2.1.8
+  resolution: "@floating-ui/react-dom@npm:2.1.8"
+  dependencies:
+    "@floating-ui/dom": "npm:^1.7.6"
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: 10c0/26260ca4bb23b57c73b824062505abf977a008ce6e0463bdacca74f7e49853c4cd1d2bbf1a77c6caa17fa37dfffda2c6c4cd07a8737ebd7474aaff7818401d75
+  languageName: node
+  linkType: hard
+
+"@floating-ui/react@npm:^0.27.15":
+  version: 0.27.19
+  resolution: "@floating-ui/react@npm:0.27.19"
+  dependencies:
+    "@floating-ui/react-dom": "npm:^2.1.8"
+    "@floating-ui/utils": "npm:^0.2.11"
+    tabbable: "npm:^6.0.0"
+  peerDependencies:
+    react: ">=17.0.0"
+    react-dom: ">=17.0.0"
+  checksum: 10c0/2a2cdfd3e67e0606833b63f922ad2a9037974f22b944e1cb8c0991b4c40450f8413d69745c0bbf4646e5ba283747f60d2fdc9a8d289b68b24448e59d81a3a96d
+  languageName: node
+  linkType: hard
+
+"@floating-ui/utils@npm:^0.2.11":
+  version: 0.2.11
+  resolution: "@floating-ui/utils@npm:0.2.11"
+  checksum: 10c0/f4bcea1559bdbb721ecc8e8ead423ac58d6a5b6e70b602cf0810ba6ad4ed1c77211b207faa88b278a9042f0c743133de08a203ed6741c1b6443423332884d5b3
+  languageName: node
+  linkType: hard
+
 "@humanwhocodes/config-array@npm:^0.11.14":
   version: 0.11.14
   resolution: "@humanwhocodes/config-array@npm:0.11.14"
@@ -411,6 +463,86 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@supabase/auth-js@npm:2.105.3":
+  version: 2.105.3
+  resolution: "@supabase/auth-js@npm:2.105.3"
+  dependencies:
+    tslib: "npm:2.8.1"
+  checksum: 10c0/1bbdca31db09f3ae8210d89e25c8b33dac4eebb6a97074e773627a92e9d52a550157c2b3ac3044a1706cd16cc9fd94e58c5c9085e743063ba52536d30b69e17b
+  languageName: node
+  linkType: hard
+
+"@supabase/functions-js@npm:2.105.3":
+  version: 2.105.3
+  resolution: "@supabase/functions-js@npm:2.105.3"
+  dependencies:
+    tslib: "npm:2.8.1"
+  checksum: 10c0/7bc8e09f0cfe33272cd3dc4946afc96d8bfde341f4857ad6f50c3fe68f24f6cb9c3ca99d67bd9811bfedf848d02b7e4a5eaa83a1485e42afe68d185e849270f8
+  languageName: node
+  linkType: hard
+
+"@supabase/phoenix@npm:^0.4.1":
+  version: 0.4.1
+  resolution: "@supabase/phoenix@npm:0.4.1"
+  checksum: 10c0/6ab26be2470a2ddb1d61ff5925b90deb2aef8eba7a7664afbee33b192b62d133c95a4e251fbc4c8cf5e23f2918eb20f3f8aa08e99b73535ca04370d084658079
+  languageName: node
+  linkType: hard
+
+"@supabase/postgrest-js@npm:2.105.3":
+  version: 2.105.3
+  resolution: "@supabase/postgrest-js@npm:2.105.3"
+  dependencies:
+    tslib: "npm:2.8.1"
+  checksum: 10c0/d8e284a8ff7924447a43f1ebeb9086b0de9d73862cfa68b2edac45b37108eb99378837cbefb063a1ebd1c0715f2d8049fef157f71ae82944840ebf40712a36ff
+  languageName: node
+  linkType: hard
+
+"@supabase/realtime-js@npm:2.105.3":
+  version: 2.105.3
+  resolution: "@supabase/realtime-js@npm:2.105.3"
+  dependencies:
+    "@supabase/phoenix": "npm:^0.4.1"
+    "@types/ws": "npm:^8.18.1"
+    tslib: "npm:2.8.1"
+    ws: "npm:^8.18.2"
+  checksum: 10c0/726835f05014390a0705fcfb80e7d0c6b1401178a2e8b88e486df51fa81faf1fb82788b79fb757d1f979556bf37154bebd747c217f7e91316f0eec6091bec36e
+  languageName: node
+  linkType: hard
+
+"@supabase/ssr@npm:^0.10.2":
+  version: 0.10.2
+  resolution: "@supabase/ssr@npm:0.10.2"
+  dependencies:
+    cookie: "npm:^1.0.2"
+  peerDependencies:
+    "@supabase/supabase-js": ^2.102.1
+  checksum: 10c0/6d182f622465ff456082728a2affde063b084240d1fbc3207686dddbe96f15cddf1de99f8771deff311f090458b5807acd34735ea952c80718447a7c286cf396
+  languageName: node
+  linkType: hard
+
+"@supabase/storage-js@npm:2.105.3":
+  version: 2.105.3
+  resolution: "@supabase/storage-js@npm:2.105.3"
+  dependencies:
+    iceberg-js: "npm:^0.8.1"
+    tslib: "npm:2.8.1"
+  checksum: 10c0/6d538c6342b50645fa7d3d1d94e88a501c29b4cb97b3ec83a048d72885506e12c8f5caae1cf2d0f65de78a341a7cc4155d51a009e72f119bac72c0b31ed701d0
+  languageName: node
+  linkType: hard
+
+"@supabase/supabase-js@npm:^2.105.3":
+  version: 2.105.3
+  resolution: "@supabase/supabase-js@npm:2.105.3"
+  dependencies:
+    "@supabase/auth-js": "npm:2.105.3"
+    "@supabase/functions-js": "npm:2.105.3"
+    "@supabase/postgrest-js": "npm:2.105.3"
+    "@supabase/realtime-js": "npm:2.105.3"
+    "@supabase/storage-js": "npm:2.105.3"
+  checksum: 10c0/975847e2e59a288acdf43157ec46284a3536d0f8662fc7a393e2720dc0c14e6ff54ea03af358673913bceca9db4163290f4881db92a1a86b90403382443ebf61
+  languageName: node
+  linkType: hard
+
 "@swc/counter@npm:^0.1.3":
   version: 0.1.3
   resolution: "@swc/counter@npm:0.1.3"
@@ -435,6 +567,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/node@npm:*":
+  version: 25.6.0
+  resolution: "@types/node@npm:25.6.0"
+  dependencies:
+    undici-types: "npm:~7.19.0"
+  checksum: 10c0/d2d2015630ff098a201407f55f5077a20270ae4f465c739b40865cd9933b91b9c5d2b85568eadaf3db0801b91e267333ca7eb39f007428b173d1cdab4b339ac5
+  languageName: node
+  linkType: hard
+
 "@types/node@npm:20":
   version: 20.14.9
   resolution: "@types/node@npm:20.14.9"
@@ -448,6 +589,15 @@ __metadata:
   version: 15.7.12
   resolution: "@types/prop-types@npm:15.7.12"
   checksum: 10c0/1babcc7db6a1177779f8fde0ccc78d64d459906e6ef69a4ed4dd6339c920c2e05b074ee5a92120fe4e9d9f1a01c952f843ebd550bee2332fc2ef81d1706878f8
+  languageName: node
+  linkType: hard
+
+"@types/react-datepicker@npm:^7.0.0":
+  version: 7.0.0
+  resolution: "@types/react-datepicker@npm:7.0.0"
+  dependencies:
+    react-datepicker: "npm:*"
+  checksum: 10c0/8b9efb8841ed9bfb06e3157a2a4c5ed18fd7d6175cf760fb4fece99c0a53a55a5f27ea6484b62f548f2543cae349456c0f912d36243fe34251a25043ba4a1296
   languageName: node
   linkType: hard
 
@@ -467,6 +617,15 @@ __metadata:
     "@types/prop-types": "npm:*"
     csstype: "npm:^3.0.2"
   checksum: 10c0/fe455f805c5da13b89964c3d68060cebd43e73ec15001a68b34634604a78140e6fc202f3f61679b9d809dde6d7a7c2cb3ed51e0fd1462557911db09879b55114
+  languageName: node
+  linkType: hard
+
+"@types/ws@npm:^8.18.1":
+  version: 8.18.1
+  resolution: "@types/ws@npm:8.18.1"
+  dependencies:
+    "@types/node": "npm:*"
+  checksum: 10c0/61aff1129143fcc4312f083bc9e9e168aa3026b7dd6e70796276dcfb2c8211c4292603f9c4864fae702f2ed86e4abd4d38aa421831c2fd7f856c931a481afbab
   languageName: node
   linkType: hard
 
@@ -861,6 +1020,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"clsx@npm:^2.1.1":
+  version: 2.1.1
+  resolution: "clsx@npm:2.1.1"
+  checksum: 10c0/c4c8eb865f8c82baab07e71bfa8897c73454881c4f99d6bc81585aecd7c441746c1399d08363dc096c550cceaf97bd4ce1e8854e1771e9998d9f94c4fe075839
+  languageName: node
+  linkType: hard
+
 "color-convert@npm:^2.0.1":
   version: 2.0.1
   resolution: "color-convert@npm:2.0.1"
@@ -901,6 +1067,13 @@ __metadata:
   version: 0.0.1
   resolution: "concat-map@npm:0.0.1"
   checksum: 10c0/c996b1cfdf95b6c90fee4dae37e332c8b6eb7d106430c17d538034c0ad9a1630cb194d2ab37293b1bdd4d779494beee7786d586a50bd9376fd6f7bcc2bd4c98f
+  languageName: node
+  linkType: hard
+
+"cookie@npm:^1.0.2":
+  version: 1.1.1
+  resolution: "cookie@npm:1.1.1"
+  checksum: 10c0/79c4ddc0fcad9c4f045f826f42edf54bcc921a29586a4558b0898277fa89fb47be95bc384c2253f493af7b29500c830da28341274527328f18eba9f58afa112c
   languageName: node
   linkType: hard
 
@@ -959,6 +1132,13 @@ __metadata:
     es-errors: "npm:^1.3.0"
     is-data-view: "npm:^1.0.1"
   checksum: 10c0/21b0d2e53fd6e20cc4257c873bf6d36d77bd6185624b84076c0a1ddaa757b49aaf076254006341d35568e89f52eecd1ccb1a502cfb620f2beca04f48a6a62a8f
+  languageName: node
+  linkType: hard
+
+"date-fns@npm:^4.1.0":
+  version: 4.1.0
+  resolution: "date-fns@npm:4.1.0"
+  checksum: 10c0/b79ff32830e6b7faa009590af6ae0fb8c3fd9ffad46d930548fbb5acf473773b4712ae887e156ba91a7b3dc30591ce0f517d69fd83bd9c38650fdc03b4e0bac8
   languageName: node
   linkType: hard
 
@@ -1817,6 +1997,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"iceberg-js@npm:^0.8.1":
+  version: 0.8.1
+  resolution: "iceberg-js@npm:0.8.1"
+  checksum: 10c0/e504da64cc26e8ad7c5344353a7203c671a740c14eb6086f20505f5e9739cab774493e616032530c962df97f2a855115cc2e89a47dd81581df5917b21a69ec48
+  languageName: node
+  linkType: hard
+
 "ignore@npm:^5.2.0":
   version: 5.3.1
   resolution: "ignore@npm:5.3.1"
@@ -2281,14 +2468,19 @@ __metadata:
   resolution: "market-campaign@workspace:."
   dependencies:
     "@next/third-parties": "npm:14.2.4"
+    "@supabase/ssr": "npm:^0.10.2"
+    "@supabase/supabase-js": "npm:^2.105.3"
     "@types/node": "npm:20"
     "@types/react": "npm:18"
+    "@types/react-datepicker": "npm:^7.0.0"
     "@types/react-dom": "npm:18"
     eslint: "npm:8"
     eslint-config-next: "npm:14.2.4"
     next: "npm:14.2.4"
     react: "npm:18"
+    react-datepicker: "npm:^9.1.0"
     react-dom: "npm:18"
+    react-hook-form: "npm:^7.75.0"
     react-icons: "npm:5.2.1"
     sharp: "npm:0.33.4"
     swiper: "npm:11.1.4"
@@ -2690,6 +2882,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-datepicker@npm:*, react-datepicker@npm:^9.1.0":
+  version: 9.1.0
+  resolution: "react-datepicker@npm:9.1.0"
+  dependencies:
+    "@floating-ui/react": "npm:^0.27.15"
+    clsx: "npm:^2.1.1"
+    date-fns: "npm:^4.1.0"
+  peerDependencies:
+    date-fns-tz: ^3.0.0
+    react: ^16.9.0 || ^17 || ^18 || ^19 || ^19.0.0-rc
+    react-dom: ^16.9.0 || ^17 || ^18 || ^19 || ^19.0.0-rc
+  peerDependenciesMeta:
+    date-fns-tz:
+      optional: true
+  checksum: 10c0/43b58b08f9e4f289a31f2a2dbd0e246e396ad44ebfea4ed8d1393de2a6bded2dad9c2002cfcf70dfbe51aabf5f886b12b1aae8463c5bc35d67b1b22733a8a0f9
+  languageName: node
+  linkType: hard
+
 "react-dom@npm:18":
   version: 18.3.1
   resolution: "react-dom@npm:18.3.1"
@@ -2699,6 +2909,15 @@ __metadata:
   peerDependencies:
     react: ^18.3.1
   checksum: 10c0/a752496c1941f958f2e8ac56239172296fcddce1365ce45222d04a1947e0cc5547df3e8447f855a81d6d39f008d7c32eab43db3712077f09e3f67c4874973e85
+  languageName: node
+  linkType: hard
+
+"react-hook-form@npm:^7.75.0":
+  version: 7.75.0
+  resolution: "react-hook-form@npm:7.75.0"
+  peerDependencies:
+    react: ^16.8.0 || ^17 || ^18 || ^19
+  checksum: 10c0/4c264ffde2fae6d5f3158a97784d5bb44e7cbffea3204af364244fcd6921b763f4e66fd8e34423fb416baa8bee2cfa4777556a7245f66de24a28be28b6af172e
   languageName: node
   linkType: hard
 
@@ -3211,6 +3430,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"tabbable@npm:^6.0.0":
+  version: 6.4.0
+  resolution: "tabbable@npm:6.4.0"
+  checksum: 10c0/d931427f4a96b801fd8801ba296a702119e06f70ad262fed8abc5271225c9f1ca51b89fdec4fb2f22e1d35acb3d2881db0a17cedc758272e9ecb540d00299d76
+  languageName: node
+  linkType: hard
+
 "tapable@npm:^2.2.0":
   version: 2.2.1
   resolution: "tapable@npm:2.2.1"
@@ -3259,6 +3485,13 @@ __metadata:
     minimist: "npm:^1.2.6"
     strip-bom: "npm:^3.0.0"
   checksum: 10c0/5b4f301a2b7a3766a986baf8fc0e177eb80bdba6e396792ff92dc23b5bca8bb279fc96517dcaaef63a3b49bebc6c4c833653ec58155780bc906bdbcf7dda0ef5
+  languageName: node
+  linkType: hard
+
+"tslib@npm:2.8.1":
+  version: 2.8.1
+  resolution: "tslib@npm:2.8.1"
+  checksum: 10c0/9c4759110a19c53f992d9aae23aac5ced636e99887b51b9e61def52611732872ff7668757d4e4c61f19691e36f4da981cd9485e869b4a7408d689f6bf1f14e62
   languageName: node
   linkType: hard
 
@@ -3376,6 +3609,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"undici-types@npm:~7.19.0":
+  version: 7.19.2
+  resolution: "undici-types@npm:7.19.2"
+  checksum: 10c0/7159f10546f9f6c47d36776bb1bbf8671e87c1e587a6fee84ae1f111ae8de4f914efa8ca0dfcd224f4f4a9dfc3f6028f627ccb5ddaccf82d7fd54671b89fac3e
+  languageName: node
+  linkType: hard
+
 "uri-js@npm:^4.2.2":
   version: 4.4.1
   resolution: "uri-js@npm:4.4.1"
@@ -3487,6 +3727,21 @@ __metadata:
   version: 1.0.2
   resolution: "wrappy@npm:1.0.2"
   checksum: 10c0/56fece1a4018c6a6c8e28fbc88c87e0fbf4ea8fd64fc6c63b18f4acc4bd13e0ad2515189786dd2c30d3eec9663d70f4ecf699330002f8ccb547e4a18231fc9f0
+  languageName: node
+  linkType: hard
+
+"ws@npm:^8.18.2":
+  version: 8.20.0
+  resolution: "ws@npm:8.20.0"
+  peerDependencies:
+    bufferutil: ^4.0.1
+    utf-8-validate: ">=5.0.2"
+  peerDependenciesMeta:
+    bufferutil:
+      optional: true
+    utf-8-validate:
+      optional: true
+  checksum: 10c0/956ac5f11738c914089b65878b9223692ace77337ba55379ae68e1ecbeae9b47a0c6eb9403688f609999a58c80d83d99865fe0029b229d308b08c1ef93d4ea14
   languageName: node
   linkType: hard
 
