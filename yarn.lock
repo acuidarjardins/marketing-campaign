@@ -585,6 +585,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/nodemailer@npm:^8.0.0":
+  version: 8.0.0
+  resolution: "@types/nodemailer@npm:8.0.0"
+  dependencies:
+    "@types/node": "npm:*"
+  checksum: 10c0/e5031df5d6557f4cdb9a0dbe1a96f3f54dc59c23d47477103fd42b5c9bc925ea1b4e51be560af5620b4d0c66fcfb015ce5ca8f914ed2f3a3086be6149d5932da
+  languageName: node
+  linkType: hard
+
 "@types/prop-types@npm:*":
   version: 15.7.12
   resolution: "@types/prop-types@npm:15.7.12"
@@ -2471,12 +2480,14 @@ __metadata:
     "@supabase/ssr": "npm:^0.10.2"
     "@supabase/supabase-js": "npm:^2.105.3"
     "@types/node": "npm:20"
+    "@types/nodemailer": "npm:^8.0.0"
     "@types/react": "npm:18"
     "@types/react-datepicker": "npm:^7.0.0"
     "@types/react-dom": "npm:18"
     eslint: "npm:8"
     eslint-config-next: "npm:14.2.4"
     next: "npm:14.2.4"
+    nodemailer: "npm:^8.0.7"
     react: "npm:18"
     react-datepicker: "npm:^9.1.0"
     react-dom: "npm:18"
@@ -2631,6 +2642,13 @@ __metadata:
   bin:
     next: dist/bin/next
   checksum: 10c0/630c2a197b57c1f29caf4672a0f8fb74dbb048e77e4513f567279467332212f3eebcb68279885f1d525d7aaebbb452f522b02c0b5cd3ca66f385341e4b4eac67
+  languageName: node
+  linkType: hard
+
+"nodemailer@npm:^8.0.7":
+  version: 8.0.7
+  resolution: "nodemailer@npm:8.0.7"
+  checksum: 10c0/f1580263ad7fba64a493c47c4d78f06679c0da9cc3becbe6b628311a16474c07286fc4e530006ea262537594ccc475dc569fd519275222fd01f99c315976aeac
   languageName: node
   linkType: hard
 
