@@ -69,6 +69,19 @@ const LeadModal = () => {
       return;
     }
 
+    fetch("/api/leads/notify", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        fullName: data.fullName,
+        phone: data.phone,
+        email: isSimplified ? null : data.email || null,
+        neighborhood: isSimplified ? "Não informado" : data.neighborhood,
+        need: isSimplified ? "Obter um orçamento" : data.need,
+        source: state.source,
+      }),
+    }).catch(() => {});
+
     let whatsappUrl: string;
     if (isSimplified) {
       whatsappUrl = buildWhatsAppUrl(
