@@ -1,13 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createServiceRoleClient } from "@/utils/supabase/server";
-import { getEnv } from "@/modules/utils";
 
 const PAGE_SIZE = 50;
 
 export async function GET(request: NextRequest) {
   const password = request.headers.get("x-admin-password");
 
-  if (!password || password !== getEnv("ADMIN_PASSWORD")) {
+  if (!password || password !== process.env.ADMIN_PASSWORD) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
@@ -62,7 +61,7 @@ export async function GET(request: NextRequest) {
 export async function DELETE(request: NextRequest) {
   const password = request.headers.get("x-admin-password");
 
-  if (!password || password !== getEnv("ADMIN_PASSWORD")) {
+  if (!password || password !== process.env.ADMIN_PASSWORD) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 

@@ -11,11 +11,10 @@ import {
 import { BodyWrapper } from "@/components";
 
 import styles from "./page.module.css";
-import { getEnv } from "@/modules/utils";
 
 const Home = () => (
   <>
-    <GoogleTagManager gtmId={getEnv("ACUIDAR_DEFAULT_GTM")} />
+    <GoogleTagManager gtmId={process.env.ACUIDAR_DEFAULT_GTM || ""} />
     <BodyWrapper>
       <main className={styles.main}>
         <BannerSection maxHeight="640px" />
