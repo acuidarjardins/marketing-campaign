@@ -1,5 +1,5 @@
 
-export const whatsappNumber = process.env.ACUIDAR_WHATSAPP_NUMBER || "5511958189900";
+export const whatsappNumber = process.env.NEXT_PUBLIC_ACUIDAR_WHATSAPP_NUMBER || "5511958189900";
 
 export const buildWhatsAppUrl = (message: string) =>
   `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
@@ -11,7 +11,7 @@ export const whatsAppAlternativeLink =
   `https://wa.me/${whatsappNumber}?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20os%20serviços%20da%20Acuidar.`;
 
 export const workWithUsLink =
-  process.env.ACUIDAR_WORK_WITH_US_URL || "https://whatsapp.com/channel/0029VbBeBr6Jf05Uk1rwlP3k";
+  process.env.NEXT_PUBLIC_ACUIDAR_WORK_WITH_US_URL || "https://whatsapp.com/channel/0029VbBeBr6Jf05Uk1rwlP3k";
 
 export const placeId = "ChIJd_dFVTBZzpQRotBOQd5zbro";
 
