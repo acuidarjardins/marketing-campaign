@@ -12,11 +12,10 @@ import { BodyWrapper } from "@/components";
 import { FormSources } from "@/modules/constants";
 
 import styles from "./page.module.css";
-import { getEnv } from "@/modules/utils";
 
 const Cuidadores = () => (
   <>
-    <GoogleTagManager gtmId={getEnv("ACUIDAR_DEFAULT_GTM")} />
+    <GoogleTagManager gtmId={process.env.ACUIDAR_DEFAULT_GTM || ""} />
     <BodyWrapper ctaMode="full" defaultSource={FormSources.P_MAX}>
       <main className={styles.main}>
         <BannerSection maxHeight="640px" />

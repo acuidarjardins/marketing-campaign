@@ -1,16 +1,15 @@
 import nodemailer from "nodemailer";
-import { getEnv } from "@/modules/utils";
 import { sourceLabels } from "@/app/leads/analysis/source-config";
 
 const LOGO_URL = "https://www.acuidarjardins.com.br/acuidar.jpg";
 
 const transporter = nodemailer.createTransport({
-  host: getEnv("SMTP_HOST"),
-  port: Number(getEnv("SMTP_PORT")) || 587,
-  secure: Number(getEnv("SMTP_PORT")) === 465,
+  host: process.env.SMTP_HOST || "",
+  port: Number(process.env.SMTP_PORT) || 587,
+  secure: Number(process.env.SMTP_PORT) === 465,
   auth: {
-    user: getEnv("SMTP_USER"),
-    pass: getEnv("SMTP_PASS"),
+    user: process.env.SMTP_USER || "",
+    pass: process.env.SMTP_PASS || "",
   },
 });
 
@@ -116,11 +115,11 @@ function buildEmailHtml(lead: LeadEmailData): string {
 }
 
 export async function sendLeadNotification(lead: LeadEmailData) {
-  const recipients = getEnv("NOTIFY_RECIPIENTS");
+  const recipients = process.env.NOTIFY_RECIPIENTS || "";
   if (!recipients) return;
 
   await transporter.sendMail({
-    from: `"Acuidar Jardins" <${getEnv("SMTP_USER")}>`,
+    from: `"Acuidar Jardins" <${process.env.SMTP_USER || ""}>`,
     to: recipients,
     subject: `Novo Lead: ${lead.fullName}`,
     html: buildEmailHtml(lead),
