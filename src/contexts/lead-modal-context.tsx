@@ -8,6 +8,10 @@ import {
   PropsWithChildren,
 } from "react";
 import { FormSources, CtaMode } from "@/modules/constants";
+import {
+  reportSuccessfulWhatsappOpen,
+  type WhatsAppConversionMode,
+} from "@/utils/analytics";
 
 type ModalStep = "closed" | "intent" | "lead-form" | "caregiver";
 
@@ -20,6 +24,8 @@ type LeadModalState = {
 type LeadModalContextValue = {
   state: LeadModalState;
   ctaMode: CtaMode;
+  analyticsFormName: string;
+  whatsappConversionMode: WhatsAppConversionMode;
   defaultSource: number;
   openIntentModal: (source: number, whatsappUrl: string) => void;
   goToIntent: () => void;
@@ -33,12 +39,16 @@ const LeadModalContext = createContext<LeadModalContextValue | null>(null);
 type LeadModalProviderProps = PropsWithChildren<{
   ctaMode?: CtaMode;
   defaultSource?: number;
+  analyticsFormName?: string;
+  whatsappConversionMode?: WhatsAppConversionMode;
 }>;
 
 export const LeadModalProvider = ({
   children,
   ctaMode = "full",
   defaultSource = FormSources.TESTES,
+  analyticsFormName = "landing",
+  whatsappConversionMode = "gtm",
 }: LeadModalProviderProps) => {
   const [state, setState] = useState<LeadModalState>({
     step: "closed",
@@ -50,6 +60,7 @@ export const LeadModalProvider = ({
     (source: number, whatsappUrl: string) => {
       if (ctaMode === "direct") {
         window.open(whatsappUrl, "_blank");
+        reportSuccessfulWhatsappOpen(whatsappConversionMode);
         return;
       }
       if (ctaMode === "lead-only") {
@@ -58,7 +69,7 @@ export const LeadModalProvider = ({
       }
       setState({ step: "intent", source, whatsappUrl });
     },
-    [ctaMode]
+    [ctaMode, whatsappConversionMode]
   );
 
   const goToIntent = useCallback(() => {
@@ -82,6 +93,8 @@ export const LeadModalProvider = ({
       value={{
         state,
         ctaMode,
+        analyticsFormName,
+        whatsappConversionMode,
         defaultSource,
         openIntentModal,
         goToIntent,

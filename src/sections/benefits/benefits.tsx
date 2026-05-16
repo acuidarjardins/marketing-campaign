@@ -65,7 +65,6 @@ const BenefitsSection = ({
       </div>
       <div className={styles.button_div}>
         <Button
-          isLeadsterCTA={false}
           width="15rem"
           background="#A5B636"
           backgroundHover="#a5b636d4"

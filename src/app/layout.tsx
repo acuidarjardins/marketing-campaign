@@ -14,7 +14,7 @@ const RootLayout = ({
 }: Readonly<{
   children: React.ReactNode;
 }>) => (
-  <html lang="pt_BR">
+  <html lang="pt_BR" suppressHydrationWarning>
     <body className={poppins.className} suppressHydrationWarning={true}>
       {children}
     </body>

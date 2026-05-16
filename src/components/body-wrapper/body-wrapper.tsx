@@ -1,5 +1,6 @@
 import { PropsWithChildren } from "react";
 import { CtaMode } from "@/modules/constants";
+import type { WhatsAppConversionMode } from "@/utils/analytics";
 import Navbar from "../navbar/navbar";
 import Footer from "../footer/footer";
 import ClientProviders from "./client-providers";
@@ -7,17 +8,24 @@ import ClientProviders from "./client-providers";
 type BodyWrapperProps = PropsWithChildren<{
   ctaMode?: CtaMode;
   defaultSource?: number;
-  isLeadsterCTA?: boolean;
+  analyticsFormName?: string;
+  whatsappConversionMode?: WhatsAppConversionMode;
 }>;
 
 const BodyWrapper = ({
   children,
   ctaMode,
   defaultSource,
-  isLeadsterCTA = false,
+  analyticsFormName,
+  whatsappConversionMode,
 }: BodyWrapperProps) => (
-  <ClientProviders ctaMode={ctaMode} defaultSource={defaultSource}>
-    <Navbar isLeadsterCTA={isLeadsterCTA} />
+  <ClientProviders
+    ctaMode={ctaMode}
+    defaultSource={defaultSource}
+    analyticsFormName={analyticsFormName}
+    whatsappConversionMode={whatsappConversionMode}
+  >
+    <Navbar />
     {children}
     <Footer />
   </ClientProviders>

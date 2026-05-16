@@ -34,14 +34,17 @@ const Home = () => (
             }
           };
           gtag('event', 'conversion', {
-              'send_to': '${process.env.ACUIDAR_GTAG_ID || ""}/${process.env.ACUIDAR_GTAG_METRIC || ""}';
+              'send_to': '${process.env.ACUIDAR_GTAG_ID || ""}/${process.env.ACUIDAR_GTAG_METRIC || ""}',
               'event_callback': callback
           });
           return false;
         }
       `}
     </Script>
-    <BodyWrapper>
+    <BodyWrapper
+      analyticsFormName="cuidadores-de-idosos"
+      whatsappConversionMode="gtag"
+    >
       <main className={styles.main}>
         <BannerSection maxHeight="640px" />
         <YoutubeSection useAlternativeLink />
