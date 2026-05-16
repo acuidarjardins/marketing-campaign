@@ -15,7 +15,7 @@ import styles from "./page.module.css";
 const Home = () => (
   <>
     <GoogleTagManager gtmId={process.env.ACUIDAR_DEFAULT_GTM || ""} />
-    <BodyWrapper>
+    <BodyWrapper analyticsFormName="landing-page">
       <main className={styles.main}>
         <BannerSection maxHeight="640px" />
         <YoutubeSection />

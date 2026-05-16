@@ -11,7 +11,6 @@ import { useLeadModal } from "@/contexts/lead-modal-context";
 import styles from "./button.module.css";
 
 export type ButtonProps = {
-  isLeadsterCTA?: boolean;
   width?: string;
   height?: string;
   fontSize?: string;
@@ -24,7 +23,6 @@ export type ButtonProps = {
 };
 
 const Button = ({
-  isLeadsterCTA,
   children,
   width,
   height,
@@ -53,29 +51,21 @@ const Button = ({
     [useAlternativeLink]
   );
 
-  const isWhatsAppCTA = !isLeadsterCTA && !customHref;
+  const isWhatsAppCTA = !customHref;
 
   const href = useMemo(() => {
-    if (isLeadsterCTA) return undefined;
     if (customHref) return customHref;
     return undefined;
-  }, [isLeadsterCTA, customHref]);
+  }, [customHref]);
 
   const handleClick = () => {
     if (isWhatsAppCTA) {
-      if (!skipAnalytics) {
-        if (useAlternativeLink) {
-          window.gtag_report_conversion();
-        } else {
-          sendGTMEvent({ event: "clickWhatsapp", value: "click" });
-        }
-      }
       openIntentModal(resolvedSource, whatsappUrl);
       return;
     }
 
     if (skipAnalytics) return;
-    if (useAlternativeLink) return window.gtag_report_conversion();
+    if (useAlternativeLink) return window.gtag_report_conversion?.();
     sendGTMEvent({ event: "clickWhatsapp", value: "click" });
   };
 
@@ -94,10 +84,6 @@ const Button = ({
       {children}
     </a>
   );
-
-  if (isLeadsterCTA) {
-    return <div className="leadster-cta">{ButtonEl}</div>;
-  }
 
   return ButtonEl;
 };

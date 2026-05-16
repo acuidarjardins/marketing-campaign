@@ -7,11 +7,7 @@ import styles from "./navbar.module.css";
 import { whatsAppDefaultLink } from "@/modules/constants";
 import { useLeadModal } from "@/contexts/lead-modal-context";
 
-type NavbarProps = {
-  isLeadsterCTA?: boolean;
-};
-
-const Navbar = ({ isLeadsterCTA }: NavbarProps) => {
+const Navbar = () => {
   const { openIntentModal, defaultSource } = useLeadModal();
 
   return (
@@ -24,17 +20,7 @@ const Navbar = ({ isLeadsterCTA }: NavbarProps) => {
         priority
       />
       <div className={styles.whatsapp_cta}>
-        {isLeadsterCTA ? (
-          <div className="leadster-cta">
-            <Image
-              alt="Whatsapp"
-              src="/whatsapp.svg"
-              width={48}
-              height={48}
-              priority
-            />
-          </div>
-        ) : (
+
           <button
             type="button"
             className={styles.whatsapp_icon_button}
@@ -49,11 +35,10 @@ const Navbar = ({ isLeadsterCTA }: NavbarProps) => {
               height={48}
               priority
             />
-          </button>
-        )}
+           </button>
+
         <div className={styles.whatsapp_button}>
           <Button
-            isLeadsterCTA={isLeadsterCTA}
             width="220px"
             fontSize="14px"
           >

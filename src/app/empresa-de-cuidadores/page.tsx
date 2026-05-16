@@ -16,7 +16,7 @@ import styles from "./page.module.css";
 const EmpresaDeCuidadores = () => (
   <>
     <GoogleTagManager gtmId={process.env.ACUIDAR_DEFAULT_GTM || ""} />
-    <BodyWrapper ctaMode="lead-only" defaultSource={FormSources.REDE_DE_PESQUISA}>
+    <BodyWrapper ctaMode="lead-only" defaultSource={FormSources.REDE_DE_PESQUISA} analyticsFormName="empresa-de-cuidadores">
       <main className={styles.main}>
         <BannerSection maxHeight="640px" />
         <YoutubeSection />

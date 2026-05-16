@@ -27,7 +27,6 @@ const YoutubeSection = ({
             width="18rem"
             background="#132E33"
             backgroundHover="#395358"
-            isLeadsterCTA={false}
             useAlternativeLink={useAlternativeLink}
           >
             <div className={styles.button_content}>

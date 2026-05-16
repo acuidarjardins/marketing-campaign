@@ -7,7 +7,7 @@ import { Button, BodyWrapper } from "@/components";
 const Home = () => (
   <>
     <GoogleTagManager gtmId={process.env.ACUIDAR_DEFAULT_GTM || ""} />
-    <BodyWrapper>
+    <BodyWrapper analyticsFormName="hot-site">
       <main className={styles.main}>
         <BannerSection />
         <div className={styles.whatsapp_button}>

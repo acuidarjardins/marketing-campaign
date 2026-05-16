@@ -5,6 +5,10 @@ import { useForm, Controller } from "react-hook-form";
 import { useLeadModal } from "@/contexts/lead-modal-context";
 import { createClient } from "@/utils/supabase/client";
 import { buildWhatsAppUrl } from "@/modules/constants";
+import {
+  pushLeadSuccess,
+  reportSuccessfulWhatsappOpen,
+} from "@/utils/analytics";
 import CustomSelect from "@/components/custom-select/custom-select";
 import styles from "./lead-modal.module.css";
 
@@ -34,7 +38,8 @@ const formatPhoneInput = (value: string): string => {
 };
 
 const LeadModal = () => {
-  const { state, ctaMode, closeModal } = useLeadModal();
+  const { state, ctaMode, closeModal, analyticsFormName, whatsappConversionMode } =
+    useLeadModal();
   const [loading, setLoading] = useState(false);
   const [submitError, setSubmitError] = useState("");
 
@@ -68,6 +73,9 @@ const LeadModal = () => {
       setLoading(false);
       return;
     }
+
+    pushLeadSuccess(analyticsFormName);
+    reportSuccessfulWhatsappOpen(whatsappConversionMode);
 
     fetch("/api/leads/notify", {
       method: "POST",
@@ -125,7 +133,14 @@ const LeadModal = () => {
           Preencha seus dados para entrarmos em contato
         </p>
 
-        <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
+        <form
+          className={styles.form}
+          onSubmit={(event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            void handleSubmit(onSubmit)(event);
+          }}
+        >
           <div className={styles.field}>
             <label htmlFor="fullName">Nome Completo *</label>
             <input
