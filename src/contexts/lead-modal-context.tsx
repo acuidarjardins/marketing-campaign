@@ -9,7 +9,7 @@ import {
 } from "react";
 import { FormSources, CtaMode } from "@/modules/constants";
 import {
-  reportSuccessfulWhatsappOpen,
+  trackWhatsappSend,
   type WhatsAppConversionMode,
 } from "@/utils/analytics";
 
@@ -59,8 +59,10 @@ export const LeadModalProvider = ({
   const openIntentModal = useCallback(
     (source: number, whatsappUrl: string) => {
       if (ctaMode === "direct") {
+        trackWhatsappSend(analyticsFormName, {
+          adsConversionMode: whatsappConversionMode,
+        });
         window.open(whatsappUrl, "_blank");
-        reportSuccessfulWhatsappOpen(whatsappConversionMode);
         return;
       }
       if (ctaMode === "lead-only") {
@@ -69,7 +71,7 @@ export const LeadModalProvider = ({
       }
       setState({ step: "intent", source, whatsappUrl });
     },
-    [ctaMode, whatsappConversionMode]
+    [ctaMode, whatsappConversionMode, analyticsFormName]
   );
 
   const goToIntent = useCallback(() => {

@@ -1,13 +1,14 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { useLeadModal } from "@/contexts/lead-modal-context";
 import { createClient } from "@/utils/supabase/client";
 import { buildWhatsAppUrl } from "@/modules/constants";
 import {
-  pushLeadSuccess,
-  reportSuccessfulWhatsappOpen,
+  trackFormFinish,
+  trackFormOpen,
+  trackWhatsappSend,
 } from "@/utils/analytics";
 import CustomSelect from "@/components/custom-select/custom-select";
 import styles from "./lead-modal.module.css";
@@ -55,6 +56,11 @@ const LeadModal = () => {
     formState: { errors },
   } = useForm<LeadFormData>();
 
+  useEffect(() => {
+    if (state.step !== "lead-form") return;
+    trackFormOpen(analyticsFormName);
+  }, [state.step, analyticsFormName]);
+
   const onSubmit = async (data: LeadFormData) => {
     setLoading(true);
     setSubmitError("");
@@ -74,8 +80,7 @@ const LeadModal = () => {
       return;
     }
 
-    pushLeadSuccess(analyticsFormName);
-    reportSuccessfulWhatsappOpen(whatsappConversionMode);
+    trackFormFinish(analyticsFormName);
 
     fetch("/api/leads/notify", {
       method: "POST",
@@ -101,6 +106,9 @@ const LeadModal = () => {
       );
     }
 
+    trackWhatsappSend(analyticsFormName, {
+      adsConversionMode: whatsappConversionMode,
+    });
     setLoading(false);
     reset();
     window.open(whatsappUrl, "_blank");
@@ -133,13 +141,11 @@ const LeadModal = () => {
           Preencha seus dados para entrarmos em contato
         </p>
 
-        <form
+        <div
           className={styles.form}
-          onSubmit={(event) => {
-            event.preventDefault();
-            event.stopPropagation();
-            void handleSubmit(onSubmit)(event);
-          }}
+          data-acuidar-lead="true"
+          role="form"
+          aria-label="Cadastro para contato"
         >
           <div className={styles.field}>
             <label htmlFor="fullName">Nome Completo *</label>
@@ -254,13 +260,16 @@ const LeadModal = () => {
           )}
 
           <button
-            type="submit"
+            type="button"
             className={styles.submit_button}
             disabled={loading}
+            onClick={() => {
+              void handleSubmit(onSubmit)();
+            }}
           >
             {loading ? "Enviando..." : "Enviar e ir para WhatsApp"}
           </button>
-        </form>
+        </div>
       </div>
     </div>
   );

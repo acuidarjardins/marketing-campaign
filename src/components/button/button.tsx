@@ -5,7 +5,6 @@ import {
   whatsAppAlternativeLink,
   whatsAppDefaultLink,
 } from "@/modules/constants";
-import { sendGTMEvent } from "@next/third-parties/google";
 import { useLeadModal } from "@/contexts/lead-modal-context";
 
 import styles from "./button.module.css";
@@ -65,8 +64,7 @@ const Button = ({
     }
 
     if (skipAnalytics) return;
-    if (useAlternativeLink) return window.gtag_report_conversion?.();
-    sendGTMEvent({ event: "clickWhatsapp", value: "click" });
+    if (useAlternativeLink) window.gtag_report_conversion?.();
   };
 
   const ButtonEl = (
