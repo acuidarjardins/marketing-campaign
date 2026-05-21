@@ -1,5 +1,4 @@
 import { GoogleTagManager } from "@next/third-parties/google";
-
 import {
   MapSection,
   BannerSection,
@@ -15,7 +14,7 @@ import styles from "./page.module.css";
 
 const Cuidadores = () => (
   <>
-    <GoogleTagManager gtmId={process.env.ACUIDAR_DEFAULT_GTM || ""} />
+    <GoogleTagManager gtmId={process.env.ACUIDAR_DEFAULT_GTM!} />
     <BodyWrapper ctaMode="full" defaultSource={FormSources.P_MAX} analyticsFormName="cuidadores">
       <main className={styles.main}>
         <BannerSection maxHeight="640px" />
