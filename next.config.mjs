@@ -87,6 +87,7 @@ function buildContentSecurityPolicy() {
       "https://google.com.br",
       "https://www.googleadservices.com",
       "https://googleads.g.doubleclick.net",
+      "https://ad.doubleclick.net",
       "https://vitals.vercel-insights.com",
       ...supabaseOrigins,
     ],
