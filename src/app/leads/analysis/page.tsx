@@ -5,6 +5,7 @@ import useLeadsAnalysis, { PAGE_SIZE } from "./use-leads-analysis";
 import AuthGate from "./components/auth-gate";
 import LeadsFilters from "./components/leads-filters";
 import LeadsTable from "./components/leads-table";
+import DeleteLeadModal from "./components/delete-lead-modal";
 import Pagination from "./components/pagination";
 import styles from "./page.module.css";
 
@@ -21,10 +22,13 @@ export default function LeadsAnalysisPage() {
     search,
     filters,
     deletingId,
+    deleteTarget,
     handleLogin,
     setSearch,
     handleFilterChange,
-    handleDelete,
+    requestDelete,
+    cancelDelete,
+    confirmDelete,
     setCurrentPage,
   } = useLeadsAnalysis();
 
@@ -63,9 +67,18 @@ export default function LeadsAnalysisPage() {
           leads={leads}
           loading={loading}
           deletingId={deletingId}
-          onDelete={handleDelete}
+          onDelete={requestDelete}
         />
       </div>
+
+      {deleteTarget && (
+        <DeleteLeadModal
+          name={deleteTarget.name}
+          deleting={deletingId === deleteTarget.id}
+          onConfirm={confirmDelete}
+          onCancel={cancelDelete}
+        />
+      )}
 
       <Pagination
         currentPage={currentPage}

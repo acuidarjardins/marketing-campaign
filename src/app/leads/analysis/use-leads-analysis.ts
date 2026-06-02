@@ -19,6 +19,10 @@ export default function useLeadsAnalysis() {
 
   const [search, setSearch] = useState("");
   const [deletingId, setDeletingId] = useState<string | null>(null);
+  const [deleteTarget, setDeleteTarget] = useState<{
+    id: string;
+    name: string;
+  } | null>(null);
   const [filters, setFilters] = useState<Filters>({
     source: "",
     neighborhood: "",
@@ -109,8 +113,17 @@ export default function useLeadsAnalysis() {
     setFilters((prev) => ({ ...prev, [key]: value }));
   };
 
-  const handleDelete = async (id: string, name: string) => {
-    if (!window.confirm(`Deletar o lead "${name}"?`)) return;
+  const requestDelete = (id: string, name: string) => {
+    setDeleteTarget({ id, name });
+  };
+
+  const cancelDelete = () => {
+    setDeleteTarget(null);
+  };
+
+  const confirmDelete = async () => {
+    if (!deleteTarget) return;
+    const { id } = deleteTarget;
     setDeletingId(id);
 
     const res = await fetch("/api/leads", {
@@ -128,6 +141,7 @@ export default function useLeadsAnalysis() {
     }
 
     setDeletingId(null);
+    setDeleteTarget(null);
   };
 
   const totalPages = Math.ceil(totalCount / PAGE_SIZE);
@@ -144,10 +158,13 @@ export default function useLeadsAnalysis() {
     search,
     filters,
     deletingId,
+    deleteTarget,
     handleLogin,
     setSearch,
     handleFilterChange,
-    handleDelete,
+    requestDelete,
+    cancelDelete,
+    confirmDelete,
     setCurrentPage,
   };
 }
