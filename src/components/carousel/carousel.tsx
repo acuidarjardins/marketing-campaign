@@ -1,6 +1,6 @@
 "use client";
 
-import { Children, ReactNode } from "react";
+import { ReactNode } from "react";
 import { register } from "swiper/element";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -42,11 +42,11 @@ const CustomCarousel = ({
         },
       }}
     >
-      {Children.toArray(
-        items.map((item) => (
-          <SwiperSlide className={slideClassName}>{item}</SwiperSlide>
-        ))
-      )}
+      {items.map((item, index) => (
+        <SwiperSlide key={index} className={slideClassName}>
+          {item}
+        </SwiperSlide>
+      ))}
     </Swiper>
   );
 };

@@ -1,5 +1,3 @@
-import { Children } from "react";
-
 import styles from "./google-reviews.module.css";
 import Image from "next/image";
 import { Button, Carousel } from "@/components";
@@ -124,11 +122,9 @@ const GoogleReviewsSection = ({
       />
       <div className={styles.carousel}>
         <Carousel
-          items={Children.toArray(
-            reviews.map(({ image, text, name }) => (
-              <CarouselItem image={image} name={name} text={text} />
-            ))
-          )}
+          items={reviews.map(({ image, text, name }) => (
+            <CarouselItem key={name} image={image} name={name} text={text} />
+          ))}
           containerClassName={styles.carousel_container}
           slideClassName={styles.carousel_slide}
         />
@@ -157,9 +153,11 @@ const CarouselItem = ({ image, name, text }: CarouselItemProps) => (
       height={30}
       width={118}
     />
-    {Children.toArray(
-      text.map((content) => <p className={styles.carousel_text}>{content}</p>)
-    )}
+    {text.map((content, index) => (
+      <p key={index} className={styles.carousel_text}>
+        {content}
+      </p>
+    ))}
   </div>
 );
 

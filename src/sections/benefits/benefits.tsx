@@ -1,4 +1,4 @@
-import { Children, ReactNode } from "react";
+import { ReactNode } from "react";
 
 import { VscBook } from "react-icons/vsc";
 import { BsHouseDoor } from "react-icons/bs";
@@ -59,9 +59,9 @@ const BenefitsSection = ({
         responsabilidade de cuidar do seu familiar
       </h2>
       <div className={styles.grid}>
-        {Children.toArray(
-          benefits.map(({ icon, text }) => <GridItem icon={icon} text={text} />)
-        )}
+        {benefits.map(({ icon, text }) => (
+          <GridItem key={text} icon={icon} text={text} />
+        ))}
       </div>
       <div className={styles.button_div}>
         <Button
