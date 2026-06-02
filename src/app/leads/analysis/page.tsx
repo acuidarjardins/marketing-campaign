@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { sourceOptions } from "./source-config";
 import useLeadsAnalysis, { PAGE_SIZE } from "./use-leads-analysis";
 import AuthGate from "./components/auth-gate";
@@ -49,9 +50,9 @@ export default function LeadsAnalysisPage() {
           <h1 className={styles.title}>Análise de Leads</h1>
           <span className={styles.count}>{totalCount} leads encontrados</span>
         </div>
-        <a href="/" className={styles.landing_link}>
+        <Link href="/" className={styles.landing_link}>
           Ir para a landing page
-        </a>
+        </Link>
       </header>
 
       <LeadsFilters

@@ -19,6 +19,7 @@ const BannerSection = ({ maxHeight }: BannerSectionProps) => {
         width={1408}
         height={475}
         className={styles.banner_desktop}
+        style={{ width: "auto", height: "auto" }}
       />
       <Image
         src="/banner_mobile.png"
@@ -26,6 +27,7 @@ const BannerSection = ({ maxHeight }: BannerSectionProps) => {
         width={850}
         height={930}
         className={styles.banner_mobile}
+        style={{ width: "auto", height: "auto" }}
       />
     </section>
   );
